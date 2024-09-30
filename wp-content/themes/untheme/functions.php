@@ -173,11 +173,6 @@ require get_template_directory() . '/inc/custom-header.php';
 
 require 'inc/carbon-fields.php';
 
-/**
- * login
- */
-
- require 'inc/login.php';
 
 /**
  * Initialization Post Types
