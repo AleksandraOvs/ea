@@ -77,15 +77,6 @@
                 
             </div>
 
-            <?php if ($map_code = carbon_get_theme_option('crb_map_code')) {
-            ?>
-                <div class="section-contacts-container__bottom">
-                    <?php echo $map_code ?>
-                </div>
-            <?php
-            }
-            ?>
-
         </div>
     </div>
 

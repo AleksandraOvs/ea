@@ -30,9 +30,32 @@ function untheme_customize_register( $wp_customize ) {
 				'render_callback' => 'untheme_customize_partial_blogdescription',
 			)
 		);
-	}
+	};
+
+	$wp_customize->add_setting('header_logo', array(
+		'default' => '',
+		//'height' => '48',
+		'width' => '280',
+		'sanitize_callback' => 'absint',
+	));
+	$wp_customize->add_control(new WP_Customize_Media_Control($wp_customize, 'header_logo', array(
+
+		'section' => 'title_tagline',
+		'label' => 'Логотип Header'
+
+	)));
+	$wp_customize->add_setting('footer_logo', array(
+		'default' => '',
+		'sanitize_callback' => 'absint',
+	));
+
+	$wp_customize->add_control(new WP_Customize_Media_Control($wp_customize, 'footer_logo', array(
+		'section' => 'title_tagline',
+		'label' => 'Логотип Footer'
+	)));
 }
 add_action( 'customize_register', 'untheme_customize_register' );
+
 
 /**
  * Render the site title for the selective refresh partial.

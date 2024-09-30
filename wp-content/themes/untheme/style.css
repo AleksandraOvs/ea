@@ -67,9 +67,10 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 		--black: #000;
 		--dark: #322828;
 		--white: #F8F7F6;
-		--light-grey: #DACCCC;
+		--light-grey: #D4B8B8;
 		--cold-turkey: #D1B8B8;
 		--dark-turkey: #6B5E5E;
+		--green: #B7DE82;
 		--dark-rgb: 50,40,40;
 		--grey: #adadad;
 	  }
@@ -645,11 +646,33 @@ h1.vis-hidden{
 }
 
 .site-header {
-    position: fixed;
-	z-index:500;
+	position: fixed;
+    z-index: 500;
     width: 100%;
-    background: rgba(255, 255, 255, .4);
-    padding: 20px 0;
+    background: rgba(255, 255, 255, 1);
+    padding: 10px 0;
+}
+
+.site-header__right__contacts .messengers-list li {
+    width: 35px;
+    height: 35px;
+}
+
+.site-header__right__contacts .messengers-list li.messengers-list__item a img{
+	width:17px;
+	height:17px;
+}
+
+.site-header__right__contacts {
+    display: flex;
+    gap: 30px;
+	align-items: center;
+}
+
+.site-header__right {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
 }
 
 /* .swiper-slide.hero-slider__slide {
@@ -785,8 +808,9 @@ textarea {
 
 .site-header.header-scroll {
 	padding: 10px 0;
-    background: rgba(255, 255, 255, 1);
-	box-shadow: 0 3px 5px rgba(50, 40, 40, .3);
+    background: rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(50px);
+    box-shadow: 0 3px 5px rgba(50, 40, 40, .3);
     transition: all .5s ease-in-out;
 }
 
@@ -948,16 +972,23 @@ textarea {
 /* Make sure logo link wraps around logo image. */
 .custom-logo-link {
 	display: inline-block;
-	width: 165px;
-    height: 65px;
-	transition: all .5s ease-in-out;
+    width: 170px;
+    height: 70px;
+    transition: all .5s ease-in-out;
 }
 
-.site-header.header-scroll .fixed-container .site-branding .custom-logo-link {
-    width: 110px;
-    height: 40px;
-	transition: all .5s ease-in-out;
+a.custom-logo-link img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position:  center;
 }
+
+/* .site-header.header-scroll .fixed-container .site-branding .custom-logo-link {
+    width: 120px;
+    height: 50px;
+	transition: all .5s ease-in-out;
+} */
 
 /* Captions
 --------------------------------------------- */

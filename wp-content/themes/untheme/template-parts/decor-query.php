@@ -9,28 +9,14 @@
         );
         query_posts($args);
         if (have_posts()) :
-            $i = 0;
         ?>
             <!-- <h2 class="title title-events animateBlur">Наши мероприятия</h2> -->
 
             <ul class="decor-list">
                 <?php while (have_posts()) : the_post();
-                    $i++;
                 ?>
 
-                    <li class="decor-list__item
-                    <?php if (($i >= 4) == 0) {
-                        echo 'fromtop';
-                    } elseif ($i == 5) {
-                        echo 'toleft';
-                    } elseif ($i == 4) {
-                        echo 'toright';
-                    } else {
-                        echo 'frombottom';
-                    }
-                    ?>
-                    
-                    ">
+                    <li class="decor-list__item frombottom">
                         <a class="decor-list__item__link" href="<?php the_permalink() ?>">
                             <?php
                             //должно находится внутри цикла

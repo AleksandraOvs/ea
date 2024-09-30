@@ -3,7 +3,7 @@ const heroSwiper = new Swiper('.hero-slider', {
     //loop: true,
     effect: 'fade',
     grabCursor: true, 
-    direction: 'vertical',
+    //direction: 'vertical',
     navigation: {
     nextEl: '.hero-slider__button-next',
     prevEl: '.hero-slider__button-prev',

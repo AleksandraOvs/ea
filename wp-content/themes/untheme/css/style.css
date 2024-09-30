@@ -123,14 +123,14 @@ section.background{
 }
 
 ul.decor-list {
-    display: flex;
+    display: grid;
     justify-content: space-between;
-    flex-wrap: wrap;
+    gap:30px;
+    grid-template-columns: repeat(3, 1fr);
 }
 
 ul.decor-list li {
     position:relative;
-    width: 32%;
     height: 330px;
     margin-bottom: 2%;
     list-style:none;
@@ -139,18 +139,6 @@ ul.decor-list li {
 /* ul.decor-list li:nth-child(4) {
     width: 49%;
 } */
-
-ul.decor-list li:nth-child(4) {
-    width: 49%;
-}
-
-ul.decor-list li:nth-child(5) {
-    width: 49%;
-}
-
-ul.decor-list li:first-child {
-    width: 32%;
-}
 
 li.decor-list__item a {
     display: block;
@@ -278,7 +266,7 @@ li.messengers-list__item {
 li.messengers-list__item a {
     display: block;
     background: var(--dark-turkey);
-    outline:1px solid var(--dark-turkey);
+    outline: 2px solid var(--white);
     border-radius: 100%;
     width: 100%;
     height: 100%;
@@ -290,16 +278,23 @@ li.messengers-list__item a {
 
 li.messengers-list__item a:hover{
     outline-offset: 2px;
-    outline-color: var(--dark);
-    background: var(--dark);
+    outline-color: var(--green);
+    background: var(--green);
     transition: all .5s ease-in-out;
 }
+
+li.messengers-list__item a:hover img{
+    filter: invert(0.8);
+    transition: all .5s ease-in-out;
+}
+
 
 li.messengers-list__item a img {
     width: 23px;
     height: 23px;
     object-fit: contain;
     object-position: center;
+    transition: all .5s ease-in-out;
 }
 
 .section-contacts-container__bottom {
@@ -372,15 +367,54 @@ h3.post-title {
 }
 
 footer.site-footer{
-    position:relative;
-    background: var(--light-grey);
+    position: relative;
+    background: var(--dark-turkey);
     padding: 7vh 0;
 }
 
 footer.site-footer .fixed-container{
     display: grid;
     gap: 7vw;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.footer-menu__inner h3 {
+    text-align: right;
+    color: var(--cold-turkey);
+}
+
+ul#footer-menu li a{
+    color: var(--white);
+    transition: all .5s linear;
+}
+
+ul#footer-menu li a {
+    display: block;
+    text-align: right;
+}
+
+.site-footer .fixed-container .site-info p {
+    max-width: 370px;
+}
+
+/* ul#footer-menu li a:visited{
+    color: var(--cold-turkey);
+} */
+
+ul#footer-menu li a:hover{
+    color: var(--cold-turkey);
+    transition: all .5s linear;
+}
+
+img.footer-logo-img {
+    width: 170px;
+    height: 170px;
+    object-fit: contain;
+    object-position: left;
+}
+
+.site-info {
+    color: var(--white);
 }
 
 .site-info .messengers-list {
