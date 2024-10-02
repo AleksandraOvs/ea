@@ -421,9 +421,9 @@ li.messengers-list__item a img {
     transition: all 1s ease-in-out;
 }
 
-.section-blog-container article:nth-child(2) {
+/* .section-blog-container article:nth-child(2) {
     margin-top: 40px;
-}
+} */
 
 a.post-thumbnail{
     display: block;
