@@ -485,6 +485,10 @@ ul#footer-menu li a {
     text-align: right;
 }
 
+.site-header__right__contacts a {
+    font-weight: 600;
+}
+
 .site-footer .fixed-container .site-info p {
     max-width: 370px;
 }
