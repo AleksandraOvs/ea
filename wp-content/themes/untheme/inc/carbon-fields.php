@@ -39,7 +39,17 @@ function site_carbon()
                         ->set_width(33),
                 )),
 
-                Field::make('text', 'crb_map_code', 'Вставить яндекс карту')
+            Field::make('complex', 'crb_footer_links', 'Ссылки в подвале')
+                ->add_fields(array(
+                    Field::make('text', 'crb_link_name', 'Название')
+                        ->set_width(33),
+                    Field::make('image', 'crb_footer_link_img', 'Иконка ссылки')
+                        ->set_width(33),
+                    Field::make('text', 'crb_footer_link_link', 'Ссылка')
+                        ->set_width(33),
+                )),
+
+            Field::make('text', 'crb_map_code', 'Вставить яндекс карту')
                 ->set_width(100),
 
 
