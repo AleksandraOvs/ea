@@ -56,8 +56,7 @@
 
 				<div class="site-header__right">
 					<div class="site-header__right__contacts">
-						<?php get_template_part('template-parts/messengers') ?>
-
+						
 						<?php
 						if ($header_link = carbon_get_theme_option('crb_header_link')) {
 						?>
@@ -74,6 +73,9 @@
 
 						}
 						?>
+						<?php get_template_part('template-parts/messengers') ?>
+
+						
 					</div>
 					<nav id="site-navigation" class="main-navigation">
 						<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e('Primary Menu', 'untheme'); ?></button>

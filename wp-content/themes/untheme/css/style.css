@@ -70,9 +70,63 @@ h1.entry-title{
 }
 
 .hero-slider__wrapper{
+    position:relative;
 	height: 100%;
     width: 100%;
 } 
+
+.hero-slider__button-prev,
+.hero-slider__button-next{
+    width: 40px;
+    height: 40px;
+    display: flex;
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+    border-radius: 100%;
+    position: absolute;
+    z-index: 2;
+    top: calc(50% + 40px);
+    background: rgba(255, 255, 255, 0.8);
+    transition: all .5s linear;
+}
+
+.hero-slider__button-prev:hover,
+.hero-slider__button-next:hover{
+    transform: scale(1.2);
+    transition: all .5s linear;
+}
+
+.hero-slider__button-prev.swiper-button-disabled:hover,
+.hero-slider__button-next.swiper-button-disabled:hover{
+    cursor:default;
+    transform: none;
+}
+
+.hero-slider__button-prev.swiper-button-disabled,
+.hero-slider__button-next.swiper-button-disabled{
+    background: rgba(255, 255, 255, 0.5);
+}
+
+.hero-slider__button-prev.swiper-button-disabled svg,
+.hero-slider__button-next.swiper-button-disabled svg{
+    opacity: .5;
+}
+
+.hero-slider__button-prev {
+    left: 30px;
+}
+
+.hero-slider__button-next {
+    right: 30px;
+}
+
+.hero-slider__button-prev svg, .hero-slider__button-next svg {
+    width: 25px;
+    height: 20px;
+    object-fit: contain;
+    object-position: center;
+}
 
 .swiper-slide.hero-slider__slide picture {
     display: block;

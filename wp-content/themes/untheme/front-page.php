@@ -40,6 +40,38 @@
     }
     ?>
 
+    <?php
+    $args = [
+        'post_type'  => 'post',
+        'post_status' => 'publish',
+        'orderby' => 'date',
+        'category_name' => 'blog'
+    ];
+    ?>
+
+    <?php $the_query = new \WP_Query($args);  ?>
+
+    <?php if ($the_query->have_posts()) {
+    ?>
+        <section class="section-blog">
+            <div class="fixed-container">
+                <h2>Новости компании</h2>
+                <div class="section-blog-container">
+                    <?php
+                    while ($the_query->have_posts()) {
+                        $the_query->the_post();  ?>
+                        <?php get_template_part('template-parts/content') ?>
+                    <?php }
+                    ?>
+                </div>
+            </div>
+        </section>
+    <?php
+
+    } ?>
+
+    <?php wp_reset_postdata(); ?>
+
     <div class="section section-contacts">
         <?php
         if ($section_background = carbon_get_post_meta(get_the_ID(), 'crb_contacts_background')) {
@@ -80,39 +112,6 @@
         </div>
     </div>
 
-
-
-    <?php
-    $args = [
-        'post_type'  => 'post',
-        'post_status' => 'publish',
-        'orderby' => 'date',
-        'category_name' => 'blog'
-    ];
-    ?>
-
-    <?php $the_query = new \WP_Query($args);  ?>
-
-    <?php if ($the_query->have_posts()) {
-    ?>
-        <section class="section-blog">
-            <div class="fixed-container">
-                <h2>Новости компании</h2>
-                <div class="section-blog-container">
-                    <?php
-                    while ($the_query->have_posts()) {
-                        $the_query->the_post();  ?>
-                        <?php get_template_part('template-parts/content') ?>
-                    <?php }
-                    ?>
-                </div>
-            </div>
-        </section>
-    <?php
-
-    } ?>
-
-    <?php wp_reset_postdata(); ?>
 
 </div>
 
