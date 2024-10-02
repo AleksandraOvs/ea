@@ -154,9 +154,9 @@ if (! function_exists('untheme_post_thumbnail')) :
 
 			<!-- .post-thumbnail -->
 
-		<?php } else if (is_front_page()) {
+		<?php } else if (is_singular()) {
 		?>
-			<a class="post-thumbnail" href="<?php the_permalink(); ?>" aria-hidden="true" tabindex="-1">
+			<div class="post-thumbnail__article" tabindex="-1">
 				<?php
 				the_post_thumbnail(
 					'post-thumbnail',
@@ -169,7 +169,7 @@ if (! function_exists('untheme_post_thumbnail')) :
 					)
 				);
 				?>
-			</a>
+			</div>
 		<?php
 		} else {
 		?>
