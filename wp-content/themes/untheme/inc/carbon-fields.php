@@ -39,13 +39,13 @@ function site_carbon()
                         ->set_width(33),
                 )),
 
-            Field::make('complex', 'crb_footer_links', 'Ссылки в подвале')
+            Field::make('complex', 'crb_block_contacts_links', 'Ссылки в блоке Контакты')
                 ->add_fields(array(
                     Field::make('text', 'crb_link_name', 'Название')
                         ->set_width(33),
-                    Field::make('image', 'crb_footer_link_img', 'Иконка ссылки')
+                    Field::make('image', 'crb_block_contacts_link_img', 'Иконка ссылки')
                         ->set_width(33),
-                    Field::make('text', 'crb_footer_link_link', 'Ссылка')
+                    Field::make('text', 'crb_block_contacts_link_link', 'Ссылка')
                         ->set_width(33),
                 )),
 

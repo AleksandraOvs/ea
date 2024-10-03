@@ -27,26 +27,9 @@
 			}
 			?>
 
-			<?php
-			if ($footer_links = carbon_get_theme_option('crb_footer_links')) {
-			?>
-				<ul class="messengers-list">
-					<?php
-					foreach ($footer_links as $footer_link) {
-						$link_img = wp_get_attachment_image_url($footer_link['crb_footer_link_img'], 'full')
-					?>
-						<li class="messengers-list__item">
-							<a href="<?php echo $footer_link['crb_footer_link_link'] ?>" class="messengers-list__item__link">
-								<img src="<?php echo $link_img; ?>" alt="<?php echo $footer_link['crb_link_name'] ?>">
-							</a>
-						</li>
-					<?php
-					}
-					?>
-				</ul>
-			<?php
-			}
-			?>
+			<?php get_template_part('template-parts/messengers') ?>
+
+			
 
 		</div><!-- .site-info -->
 

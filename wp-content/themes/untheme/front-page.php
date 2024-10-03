@@ -105,7 +105,26 @@
                 }
                 ?>
 
-                <?php get_template_part('template-parts/messengers') ?>
+<?php
+			if ($contact_links = carbon_get_theme_option('crb_block_contacts_links')) {
+			?>
+				<ul class="messengers-list">
+					<?php
+					foreach ($contact_links as $contact_link) {
+						$link_img = wp_get_attachment_image_url($contact_link['crb_block_contacts_link_img'], 'full')
+					?>
+						<li class="messengers-list__item">
+							<a href="<?php echo $contact_link['crb_block_contacts_link_link'] ?>" class="messengers-list__item__link">
+								<img src="<?php echo $link_img; ?>" alt="<?php echo $contact_link['crb_link_name'] ?>">
+							</a>
+						</li>
+					<?php
+					}
+					?>
+				</ul>
+			<?php
+			}
+			?>
                 
             </div>
 
