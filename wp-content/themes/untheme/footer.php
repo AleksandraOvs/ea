@@ -34,7 +34,6 @@
 		</div><!-- .site-info -->
 
 		<div class="footer-menu__inner">
-			<h3>Аренда декора</h3>
 			<?php
 			wp_nav_menu(
 				array(
