@@ -42,7 +42,7 @@ h1.entry-title{
 
 .article-header__titles {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(1, 1fr);
 }
 
 .article-header__titles .entry-meta span {
