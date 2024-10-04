@@ -80,7 +80,7 @@
 
 							<?php
 							if ($item_desc = $decor_item['crb_decor_item_desc']) {
-								echo '<p class="decor-item__description">' . $item_desc . '</p>';
+								echo '<div class="decor-item__description">' . $item_desc . '</div>';
 							}
 							?>
 

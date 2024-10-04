@@ -33,7 +33,7 @@ h2{
 }
 
 h3{
-    font-size:28px;
+    font-size: calc(1em + 1vw);
     font-family: 'Gilroy', sans-serif;
     font-weight:400;
     line-height: 120%;
@@ -722,19 +722,20 @@ button.fancybox-button.fancybox-close-small {
 }
 
 @media (max-width: 992px){
-    ul.decor-list li {
-        position: relative;
-        width: 49%;
-    }
-
-    ul.decor-list li:first-child {
-        width: 49%;
-    }
-
     .section-contacts__img {
         width: 100%;
         height: 40vh;
     }
+
+    ul.decor-items__list {
+        list-style: none;
+        max-width: 100%;
+    }
+    ul.decor-list {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+
 }
 
 @media (max-width: 768px){
@@ -782,4 +783,96 @@ button.fancybox-button.fancybox-close-small {
         grid-template-columns: repeat(1, 1fr);
     }
 
+}
+
+@media (max-width: 576px){
+    li.decor-items__list__item{
+        flex-direction: column;
+    }
+
+    .decor-items__list__item a {
+        display: block;
+        width: 100%;
+    }
+
+    .single-decor-description p, .single-decor-description div {
+        width: 100%;
+    }
+
+    .decor-items__list__item__content {
+        width: 100%;
+        align-items: center;
+        text-align: center;
+        gap: 30px;
+    }
+
+    .decor-item__contacts {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .site-branding {
+        width: auto;
+    }
+
+    .site-header__right__contacts .messengers-list li {
+        width: 20px;
+        height: 20px;
+    }
+
+    .site-header__right__contacts .messengers-list li.messengers-list__item a img {
+        width: 13px;
+        height: 13px;
+    }
+
+    .article-heading h1 {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    h1.post-title:before {
+        content: none;
+    }
+
+    h1.post-title:after {
+        width: 100%;
+    }
+
+    .decor-item__contacts-links .messengers-list .messengers-list__item {
+        width: 40px;
+        height: 40px;
+        border-radius: 100%;
+        outline: 1px solid var(--dark-turkey);
+    }
+
+    .decor-item__contacts .btn-link {
+        padding: 15px;
+        max-width: 400px;
+    }
+
+    ul.decor-items__list .decor-items__list__item {
+        margin-top: 40px;
+    }
+
+    .custom-logo-link {
+        width: 100px;
+        height: 40px;
+    }
+
+    ul.decor-list {
+        grid-template-columns: repeat(1, 1fr);
+        gap: 15px;
+    }
+
+
+}
+
+@media (max-width: 480px){
+    .main-navigation{
+        top: 20%;
+        right: 5%;
+        width: 90%;
+        height: 70%;
+    }
 }

@@ -42,6 +42,8 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     // Изменение хедера при скролле
+
+    if( window.innerWidth >= 1024 ){
     const headerFront = document.querySelector('.site-header');
     const headerChange = () => {
         const
@@ -59,7 +61,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     }
     headerChange();
-
+    }
     //плавный скролл
 
     function scrollTo(to, duration = 700) {
@@ -139,6 +141,14 @@ let elements = document.querySelectorAll('.toright, .fromtop, .toleft, .destr-im
 for (let elm of elements) {
     observer.observe(elm);
 };
+
+(function () {
+    $('.menu-toggle').on('click', function() {
+    $('.menu-toggle').toggleClass('animate');
+        $('.main-navigation').toggleClass('animate');
+        $('.background-container').toggleClass('animate');
+    })
+    })();
 
 });
 

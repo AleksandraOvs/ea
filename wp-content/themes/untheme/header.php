@@ -64,29 +64,36 @@
 						);
 						?>
 					</nav><!-- #site-navigation -->
+
+					<div class="site-header__right__contacts">
+
+						<?php
+						if ($header_link = carbon_get_theme_option('crb_header_link')) {
+						?>
+							<a href="<?php echo $header_link ?>" class="link">
+								<?php
+								if ($header_link_text = carbon_get_theme_option('crb_header_link_text')) {
+									echo $header_link_text;
+								} else {
+									echo 'Link';
+								}
+								?>
+							</a>
+						<?php
+
+						}
+						?>
+						<?php get_template_part('template-parts/messengers') ?>
+					</div>
+
+					<a href="#" class="menu-toggle">
+						<!-- <p class="hidden"><?php //esc_html_e('Primary Menu', 'untheme'); ?></p> -->
+						<div class="bar"></div>
+						<div class="bar"></div>
+						<div class="bar"></div>
+					</a>
 				</div>
-				<div class="site-header__right__contacts">
 
-					<?php
-					if ($header_link = carbon_get_theme_option('crb_header_link')) {
-					?>
-						<a href="<?php echo $header_link ?>" class="link">
-							<?php
-							if ($header_link_text = carbon_get_theme_option('crb_header_link_text')) {
-								echo $header_link_text;
-							} else {
-								echo 'Link';
-							}
-							?>
-						</a>
-					<?php
-
-					}
-					?>
-					<?php get_template_part('template-parts/messengers') ?>
-				</div>
-
-				<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e('Primary Menu', 'untheme'); ?></button>
 			</div>
 
 		</header><!-- #masthead -->
