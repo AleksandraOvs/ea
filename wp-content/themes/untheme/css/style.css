@@ -1057,6 +1057,10 @@ button.fancybox-button.fancybox-close-small {
         opacity: 1;
     }
 
+    ul.messengers-list._toggle-contacts li a {
+        filter: brightness(0.3);
+    }
+
     ul.messengers-list._toggle-contacts.animate .messengers-list__item {
         /* opacity: 1;
         transform: none;
