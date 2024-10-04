@@ -762,6 +762,36 @@ button.fancybox-button.fancybox-close-small {
     height: 30px;
 }
 
+section.page-section.error-404.not-found .fixed-container .page-content p {
+    text-align: center;
+    color: var(--cold-turkey);
+    font-family: 'Cormorant', serif;
+    font-weight: 600;
+    font-size: calc(1em + 7vw);
+    line-height: 1;
+    margin: 20px 0;
+}
+
+section.page-section.error-404.not-found .fixed-container .page-content .search-content p,
+h4.page-404-title {
+    font-size: 16px;
+    text-align:center;
+    color: var(--dark);
+    font-weight: 400;
+    margin: 0;
+    margin-bottom: 20px;
+    font-family: "Gilroy", "Helvetica Neue", sans-serif;
+}
+
+h4.page-404-title{
+    margin: 0;
+}
+
+section.page-section.error-404.not-found .fixed-container .page-content .search-content {
+    width: 70%;
+    margin: 0 auto;
+}
+
 @media (max-width: 1440px) {
     .fixed-container {
         width: 100%;
