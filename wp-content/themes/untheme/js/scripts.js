@@ -43,24 +43,24 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Изменение хедера при скролле
 
-    if( window.innerWidth >= 1024 ){
-    const headerFront = document.querySelector('.site-header');
-    const headerChange = () => {
-        const
-            mainBlock = document.querySelector('body');
+    if (window.innerWidth >= 1024) {
+        const headerFront = document.querySelector('.site-header');
+        const headerChange = () => {
+            const
+                mainBlock = document.querySelector('body');
 
 
-        window.addEventListener('scroll', () => {
-            if (-mainBlock.getBoundingClientRect().top > 100) {
-                headerFront.classList.add('header-scroll');
+            window.addEventListener('scroll', () => {
+                if (-mainBlock.getBoundingClientRect().top > 100) {
+                    headerFront.classList.add('header-scroll');
 
-            } else {
-                headerFront.classList.remove('header-scroll');
-            }
-        })
+                } else {
+                    headerFront.classList.remove('header-scroll');
+                }
+            })
 
-    }
-    headerChange();
+        }
+        headerChange();
     }
     //плавный скролл
 
@@ -96,58 +96,67 @@ document.addEventListener("DOMContentLoaded", () => {
 
     //кнопка вверх
 
-//     const upArrow = document.querySelector('.arrow-up');
+    //     const upArrow = document.querySelector('.arrow-up');
 
 
-// upArrow.addEventListener('click', (e) => {
-//     e.preventDefault();
-//     // Вызываем функцию, первый аргумент - отступ, второй - скорость скролла, чем больше значение, тем медленнее скорость прокрутки
-//     scrollTo(0, 800);
-// });
-// // Вверх и показ верхнего меню
-// const arrowUp = () => {
-//     const
-//         //fixedHeader = document.querySelector('.fixed-header'),
-//         mainBlock = document.querySelector('.site-container'),
-//         arrow = document.querySelector('.arrow-up');
+    // upArrow.addEventListener('click', (e) => {
+    //     e.preventDefault();
+    //     // Вызываем функцию, первый аргумент - отступ, второй - скорость скролла, чем больше значение, тем медленнее скорость прокрутки
+    //     scrollTo(0, 800);
+    // });
+    // // Вверх и показ верхнего меню
+    // const arrowUp = () => {
+    //     const
+    //         //fixedHeader = document.querySelector('.fixed-header'),
+    //         mainBlock = document.querySelector('.site-container'),
+    //         arrow = document.querySelector('.arrow-up');
 
-//     window.addEventListener('scroll', () => {
-//         if (-mainBlock.getBoundingClientRect().top > 300) {
-//             arrow.classList.add('show');
-//             //fixedHeader.classList.add('show')
+    //     window.addEventListener('scroll', () => {
+    //         if (-mainBlock.getBoundingClientRect().top > 300) {
+    //             arrow.classList.add('show');
+    //             //fixedHeader.classList.add('show')
 
-//         } else {
-//             arrow.classList.remove('show');
-//             //fixedHeader.classList.remove('show')
+    //         } else {
+    //             arrow.classList.remove('show');
+    //             //fixedHeader.classList.remove('show')
 
-//         }
-//     })
+    //         }
+    //     })
 
-// }
-// arrowUp();
+    // }
+    // arrowUp();
 
-//анимация при скролле
+    //анимация при скролле
 
-function onEntry(entry) {
-    entry.forEach(change => {
-        if (change.isIntersecting) {
-            change.target.classList.add('element-show');
-        }
-    });
-}
-let options = { threshold: [0.5] };
-let observer = new IntersectionObserver(onEntry, options);
-let elements = document.querySelectorAll('.toright, .fromtop, .toleft, .destr-img, .toopacity, .animateBlur, .animateScale, .frombottom');
-for (let elm of elements) {
-    observer.observe(elm);
-};
+    function onEntry(entry) {
+        entry.forEach(change => {
+            if (change.isIntersecting) {
+                change.target.classList.add('element-show');
+            }
+        });
+    }
+    let options = { threshold: [0.5] };
+    let observer = new IntersectionObserver(onEntry, options);
+    let elements = document.querySelectorAll('.toright, .fromtop, .toleft, .destr-img, .toopacity, .animateBlur, .animateScale, .frombottom');
+    for (let elm of elements) {
+        observer.observe(elm);
+    };
 
-(function () {
-    $('.menu-toggle').on('click', function() {
-    $('.menu-toggle').toggleClass('animate');
-        $('.main-navigation').toggleClass('animate');
-        $('.background-container').toggleClass('animate');
-    })
+    (function () {
+        $('.menu-toggle').on('click', function () {
+            $('.menu-toggle').toggleClass('animate');
+            $('.main-navigation').toggleClass('animate');
+            $('.background-container').toggleClass('animate');
+        })
+    })();
+
+    (function () {
+        $('.toggle-contacts-icon').on('click', function () {
+            $(this).toggleClass('animate');
+            $('.toggle-contacts__list').toggleClass('animate');
+            $('._toggle-contacts').toggleClass('animate');
+            //$('.background-container').toggleClass('animate');
+        })
     })();
 
 });

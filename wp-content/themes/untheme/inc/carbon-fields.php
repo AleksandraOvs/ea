@@ -25,18 +25,22 @@ function site_carbon()
                 ->set_width(50),
 
             Field::make('text', 'crb_phone', 'Телефон')
-                ->set_width(50),
+                ->set_width(33),
             Field::make('text', 'crb_phone_link', 'Ссылка телефона')
-                ->set_width(50),
+                ->set_width(33),
+            Field::make('image', 'crb_phone_link_img', 'Изображение телефона')
+                ->set_width(33),
 
             Field::make('complex', 'crb_messengers_contacts', 'Ссылки на мессенджеры')
                 ->add_fields(array(
                     Field::make('text', 'crb_contact_name', 'Название')
-                        ->set_width(33),
+                        ->set_width(25),
                     Field::make('image', 'crb_contact_image', 'Иконка мессенджера')
-                        ->set_width(33),
+                        ->set_width(25),
                     Field::make('text', 'crb_contact_link', 'Ссылка мессенджера')
-                        ->set_width(33),
+                        ->set_width(25),
+                    Field::make('color', 'crb_contact_background', 'Цвет фона иконки')
+                    ->set_width(25),
                 )),
 
             Field::make('complex', 'crb_block_contacts_links', 'Ссылки в блоке Контакты')
@@ -93,7 +97,7 @@ function site_carbon()
                 ->set_width(50),
             Field::make('text', 'crb_order_shortcode', 'Шорткод для формы заказа')
                 ->set_width(50),
-        
+
             // Field::make('text', 'crb_cf_adv', 'Контактная форма для страницы Реклама')
             //     ->help_text('вставьте шорткод для формы обратной связи в это поле')
             //     ->set_width(33),
@@ -160,12 +164,12 @@ function site_carbon()
                 ->set_width(100),
 
             Field::make('complex', 'crb_decor_items', 'Продукция в этой категории')
-            ->add_fields(array(
-                Field::make('image', 'crb_decor_item_img', 'Изображение декора'),
-                Field::make('text', 'crb_decor_item_head', 'Название декора'),
-                Field::make('rich_text', 'crb_decor_item_desc', 'Описание декора'),
-            ))
-                
+                ->add_fields(array(
+                    Field::make('image', 'crb_decor_item_img', 'Изображение декора'),
+                    Field::make('text', 'crb_decor_item_head', 'Название декора'),
+                    Field::make('rich_text', 'crb_decor_item_desc', 'Описание декора'),
+                ))
+
         ));
 
 
