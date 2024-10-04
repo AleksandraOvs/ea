@@ -757,6 +757,11 @@ button.fancybox-button.fancybox-close-small {
     right: 10px;
 }
 
+.fancybox-button {
+    width: 30px;
+    height: 30px;
+}
+
 @media (max-width: 1440px) {
     .fixed-container {
         width: 100%;
@@ -790,9 +795,9 @@ button.fancybox-button.fancybox-close-small {
         max-width: 80%;
     }
 
-    li.messengers-list__item a img {
+    /* li.messengers-list__item a img {
         filter: brightness(0.2);
-    }
+    } */
 
     li.messengers-list__item a {
         background: transparent;
