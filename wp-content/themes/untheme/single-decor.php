@@ -14,12 +14,7 @@ get_header();
 
 	<section class="page-section">
 
-		<?php
-		if (is_active_sidebar('page-sidebar')) { ?>
-			<div class="fixed-container _with-sidebar">
-			<?php } else {
-			echo '<div class="fixed-container">';
-		} ?>
+		
 
 			<?php
 			while (have_posts()) :
@@ -40,7 +35,7 @@ get_header();
 				dynamic_sidebar('page-sidebar');
 				echo '</aside>';
 			} ?>
-			</div>
+			
 
 
 

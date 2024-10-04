@@ -1,4 +1,5 @@
 <?php
+
 /**
  * untheme functions and definitions
  *
@@ -7,9 +8,9 @@
  * @package untheme
  */
 
-if ( ! defined( '_S_VERSION' ) ) {
+if (! defined('_S_VERSION')) {
 	// Replace the version number of the theme on each release.
-	define( '_S_VERSION', '1.0.0' );
+	define('_S_VERSION', '1.0.0');
 }
 
 /**
@@ -19,17 +20,18 @@ if ( ! defined( '_S_VERSION' ) ) {
  * runs before the init hook. The init hook is too late for some features, such
  * as indicating support for post thumbnails.
  */
-function untheme_setup() {
+function untheme_setup()
+{
 	/*
 		* Make theme available for translation.
 		* Translations can be filed in the /languages/ directory.
 		* If you're building a theme based on untheme, use a find and replace
 		* to change 'untheme' to the name of your theme in all the template files.
 		*/
-	load_theme_textdomain( 'untheme', get_template_directory() . '/languages' );
+	load_theme_textdomain('untheme', get_template_directory() . '/languages');
 
 	// Add default posts and comments RSS feed links to head.
-	add_theme_support( 'automatic-feed-links' );
+	add_theme_support('automatic-feed-links');
 
 	/*
 		* Let WordPress manage the document title.
@@ -37,20 +39,23 @@ function untheme_setup() {
 		* hard-coded <title> tag in the document head, and expect WordPress to
 		* provide it for us.
 		*/
-	add_theme_support( 'title-tag' );
+	add_theme_support('title-tag');
 
 	/*
 		* Enable support for Post Thumbnails on posts and pages.
 		*
 		* @link https://developer.wordpress.org/themes/functionality/featured-images-post-thumbnails/
 		*/
-	add_theme_support( 'post-thumbnails' );
+	add_theme_support('post-thumbnails');
+	add_image_size('medium', 700, 600, true);
+	add_image_size('small', 400, 270, true);
+	add_image_size('thumb', 250, 250, true);
 
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus(
 		array(
-			'menu-1' => esc_html__( 'Primary', 'untheme' ),
-			'services' => esc_html__( 'Services', 'untheme' ),
+			'menu-1' => esc_html__('Primary', 'untheme'),
+			'services' => esc_html__('Services', 'untheme'),
 		)
 	);
 
@@ -84,7 +89,7 @@ function untheme_setup() {
 	);
 
 	// Add theme support for selective refresh for widgets.
-	add_theme_support( 'customize-selective-refresh-widgets' );
+	add_theme_support('customize-selective-refresh-widgets');
 
 	/**
 	 * Add support for core custom logo.
@@ -101,7 +106,7 @@ function untheme_setup() {
 	// 	)
 	// );
 }
-add_action( 'after_setup_theme', 'untheme_setup' );
+add_action('after_setup_theme', 'untheme_setup');
 
 /**
  * Set the content width in pixels, based on the theme's design and stylesheet.
@@ -110,22 +115,24 @@ add_action( 'after_setup_theme', 'untheme_setup' );
  *
  * @global int $content_width
  */
-function untheme_content_width() {
-	$GLOBALS['content_width'] = apply_filters( 'untheme_content_width', 640 );
+function untheme_content_width()
+{
+	$GLOBALS['content_width'] = apply_filters('untheme_content_width', 640);
 }
-add_action( 'after_setup_theme', 'untheme_content_width', 0 );
+add_action('after_setup_theme', 'untheme_content_width', 0);
 
 /**
  * Register widget area.
  *
  * @link https://developer.wordpress.org/themes/functionality/sidebars/#registering-a-sidebar
  */
-function untheme_widgets_init() {
+function untheme_widgets_init()
+{
 	register_sidebar(
 		array(
-			'name'          => esc_html__( 'Sidebar for page', 'untheme' ),
+			'name'          => esc_html__('Sidebar for page', 'untheme'),
 			'id'            => 'page-sidebar',
-			'description'   => esc_html__( 'Add widgets here.', 'untheme' ),
+			'description'   => esc_html__('Add widgets here.', 'untheme'),
 			'before_widget' => '<div id="%1$s" class="sidebar-part %2$s">',
 			'after_widget'  => '</div>',
 			'before_title'  => '<h2 class="widget-title">',
@@ -133,14 +140,15 @@ function untheme_widgets_init() {
 		)
 	);
 }
-add_action( 'widgets_init', 'untheme_widgets_init' );
+add_action('widgets_init', 'untheme_widgets_init');
 
 /**
  * Enqueue scripts and styles.
  */
-function untheme_scripts() {
-	wp_enqueue_style( 'untheme-style', get_stylesheet_uri(), array(),time() );
-	wp_style_add_data( 'untheme-style', 'rtl', 'replace' );
+function untheme_scripts()
+{
+	wp_enqueue_style('untheme-style', get_stylesheet_uri(), array(), time());
+	wp_style_add_data('untheme-style', 'rtl', 'replace');
 	wp_enqueue_style('fonts', get_stylesheet_directory_uri() . '/css/fonts.css', array(), time());
 	wp_enqueue_style('fancy_styles', get_stylesheet_directory_uri() . '/css/jquery.fancybox.min.css', array(), time());
 	wp_enqueue_style('normalize_styles', get_stylesheet_directory_uri() . '/css/normalize.css', array(), time());
@@ -149,18 +157,18 @@ function untheme_scripts() {
 	wp_enqueue_style('animate_styles', get_stylesheet_directory_uri() . '/css/animate.css', array(), time());
 
 	wp_deregister_script('jquery');
-	wp_enqueue_script( 'jquery_scripts', get_template_directory_uri() . '/js/jquery-3.7.1.min.js', array(), _S_VERSION, true );
-	wp_enqueue_script( 'untheme-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true );
-	wp_enqueue_script( 'fancy_scripts', get_template_directory_uri() . '/js/jquery.fancybox.min.js', array(), _S_VERSION, true );
-	wp_enqueue_script( 'swiper_scripts', get_template_directory_uri() . '/js/swiper-bundle.min.js', array(), _S_VERSION, true );
-	wp_enqueue_script( 'untheme_scripts', get_template_directory_uri() . '/js/scripts.js', array(), _S_VERSION, true );
-	wp_enqueue_script( 'untheme_slider_scripts', get_template_directory_uri() . '/js/slider-scripts.js', array(), _S_VERSION, true );
+	wp_enqueue_script('jquery_scripts', get_template_directory_uri() . '/js/jquery-3.7.1.min.js', array(), _S_VERSION, true);
+	wp_enqueue_script('untheme-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true);
+	wp_enqueue_script('fancy_scripts', get_template_directory_uri() . '/js/jquery.fancybox.min.js', array(), _S_VERSION, true);
+	wp_enqueue_script('swiper_scripts', get_template_directory_uri() . '/js/swiper-bundle.min.js', array(), _S_VERSION, true);
+	wp_enqueue_script('untheme_scripts', get_template_directory_uri() . '/js/scripts.js', array(), _S_VERSION, true);
+	wp_enqueue_script('untheme_slider_scripts', get_template_directory_uri() . '/js/slider-scripts.js', array(), _S_VERSION, true);
 
-	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
-		wp_enqueue_script( 'comment-reply' );
+	if (is_singular() && comments_open() && get_option('thread_comments')) {
+		wp_enqueue_script('comment-reply');
 	}
 }
-add_action( 'wp_enqueue_scripts', 'untheme_scripts' );
+add_action('wp_enqueue_scripts', 'untheme_scripts');
 
 /**
  * Implement the Custom Header feature.
@@ -177,13 +185,13 @@ require 'inc/carbon-fields.php';
  * Initialization Carbon Fields
  */
 
- require 'inc/breadcrumbs.php';
+require 'inc/breadcrumbs.php';
 
 /**
  * Initialization Post Types
  */
 
- require 'inc/post-types.php';
+require 'inc/post-types.php';
 
 /**
  * Custom template tags for this theme.
@@ -203,7 +211,24 @@ require get_template_directory() . '/inc/customizer.php';
 /**
  * Load Jetpack compatibility file.
  */
-if ( defined( 'JETPACK__VERSION' ) ) {
+if (defined('JETPACK__VERSION')) {
 	require get_template_directory() . '/inc/jetpack.php';
 }
 
+
+add_filter('template_include', 'var_template_include', 1000);
+function var_template_include($t)
+{
+	$GLOBALS['current_theme_template'] = basename($t);
+	return $t;
+}
+
+function get_current_template($echo = false)
+{
+	if (!isset($GLOBALS['current_theme_template']))
+		return false;
+	if ($echo)
+		echo $GLOBALS['current_theme_template'];
+	else
+		return $GLOBALS['current_theme_template'];
+}

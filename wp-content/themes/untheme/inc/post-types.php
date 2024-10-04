@@ -35,9 +35,9 @@ add_action( 'init', 'register_post_types' );
 			//'capability_type'   => 'post',
 			//'capabilities'      => 'post', // массив дополнительных прав для этого типа записи
 			//'map_meta_cap'      => null, // Ставим true чтобы включить дефолтный обработчик специальных прав
-			'hierarchical'        => false,
+			'hierarchical'        => true,
 			'supports'            => [ 'title','thumbnail', 'editor'], // 'title','editor','author','thumbnail','excerpt','trackbacks','custom-fields','comments','revisions','page-attributes','post-formats'
-			'taxonomies'          => [],
+			'taxonomies'          => ['category'],
 			'has_archive'         => true,
 			'rewrite'             => true,
 			'query_var'           => true,

@@ -4,7 +4,7 @@
         $args = array(
             'post_type' => 'decor',
             'publish' => true,
-            //'category_name' => 'decor'
+            //'cat' => 'decoration'
             //'paged' => get_query_var('paged'),
         );
         query_posts($args);

@@ -12,6 +12,23 @@
 
 ?>
 
+<?php if ($order_shortcode = carbon_get_theme_option('crb_order_shortcode')) {
+?>
+
+    <div class="hidden">
+        <div class="popup-order" id="popup-order">
+            <?php //echo $popup_sale_short 
+           
+                echo do_shortcode(" $order_shortcode ");
+           
+            ?>
+            <?php //echo do_shortcode('[contact-form-7 id="72c1f3a" title="Contact form 1"]'); ?>
+        </div>
+    </div>
+<?php
+}
+?>
+
 <footer id="colophon" class="site-footer">
 	<div class="fixed-container">
 		<div class="site-info">
@@ -45,6 +62,14 @@
 		</div>
 
 	</div>
+
+	<?php
+                if (current_user_can('administrator')) {
+                ?>
+                    <div class="show-temp"><?php echo get_current_template(); ?> </div>
+                <?php
+                }
+				?>
 
 </footer><!-- #colophon -->
 </div><!-- #page -->

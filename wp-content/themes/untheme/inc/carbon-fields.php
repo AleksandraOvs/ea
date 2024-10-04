@@ -88,15 +88,12 @@ function site_carbon()
         //         ))
         // ))
 
-        ->add_tab(__('Формы обратной связи'), array(
-            Field::make('text', 'crb_cf_head', 'Заголовок контактной формы')
-                ->set_width(33),
-            Field::make('rich_text', 'crb_cf_description', 'Текст под заголовком')
-                ->set_width(33),
-            Field::make('text', 'crb_cf', 'Контактная форма для Главной страницы')
-                ->help_text('вставьте шорткод для формы обратной связи в это поле')
-                ->set_width(33),
-
+        ->add_tab(__('Форма заказа'), array(
+            Field::make('text', 'crb_order_button_text', 'Текст кнопки заказа')
+                ->set_width(50),
+            Field::make('text', 'crb_order_shortcode', 'Шорткод для формы заказа')
+                ->set_width(50),
+        
             // Field::make('text', 'crb_cf_adv', 'Контактная форма для страницы Реклама')
             //     ->help_text('вставьте шорткод для формы обратной связи в это поле')
             //     ->set_width(33),
@@ -155,6 +152,21 @@ function site_carbon()
             Field::make('rich_text', 'crb_contacts_text_border', 'Текст для секции контактов (в рамочке)')
         ));
 
+    Container::make('post_meta', 'Добавить контент на эту страницу')
+        ->show_on_post_type('decor')
+        ->add_tab(__('Контент страницы декора'), array(
+            Field::make('rich_text', 'crb_decor_desc', 'Краткое описание страницы')
+                ->help_text('Фрагмент общего описания, выводится под заголовком страницы')
+                ->set_width(100),
+
+            Field::make('complex', 'crb_decor_items', 'Продукция в этой категории')
+            ->add_fields(array(
+                Field::make('image', 'crb_decor_item_img', 'Изображение декора'),
+                Field::make('text', 'crb_decor_item_head', 'Название декора'),
+                Field::make('rich_text', 'crb_decor_item_desc', 'Описание декора'),
+            ))
+                
+        ));
 
 
     //->add_tab(__('Блок Контакты'), array(
