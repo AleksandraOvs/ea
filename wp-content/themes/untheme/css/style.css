@@ -397,6 +397,12 @@ ul.messengers-list {
 li.messengers-list__item {
     width: 50px;
     height: 50px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    border-radius: 100%;
+    -webkit-border-radius: 100%;
+    -moz-border-radius: 100%;
+    -khtml-border-radius: 100%;
 }
 
 li.messengers-list__item a {
