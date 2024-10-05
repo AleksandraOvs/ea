@@ -404,6 +404,7 @@ li.messengers-list__item a {
     background: var(--dark-turkey);
     outline: 2px solid var(--white);
     -webkit-appearance: none;
+    -moz-appearance: none;
     border-radius: 100%;
     -webkit-border-radius: 100%;
     -moz-border-radius: 100%;
