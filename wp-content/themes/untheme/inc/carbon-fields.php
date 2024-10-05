@@ -51,6 +51,8 @@ function site_carbon()
                         ->set_width(33),
                     Field::make('text', 'crb_block_contacts_link_link', 'Ссылка')
                         ->set_width(33),
+                    Field::make('color', 'crb_block_contact_background', 'Цвет фона иконки')
+                    ->set_width(25),
                 )),
 
             Field::make('text', 'crb_map_code', 'Вставить яндекс карту')

@@ -114,7 +114,12 @@
 						$link_img = wp_get_attachment_image_url($contact_link['crb_block_contacts_link_img'], 'full')
 					?>
 						<li class="messengers-list__item">
-							<a href="<?php echo $contact_link['crb_block_contacts_link_link'] ?>" class="messengers-list__item__link">
+							<a href="<?php echo $contact_link['crb_block_contacts_link_link'] ?>" class="messengers-list__item__link"
+                            <?php 
+                                    if ($color = $contact_link['crb_block_contact_background']){
+                                        echo 'style="background-color:'.$color.'; outline-color:'.$color.'"';
+                                    }
+                                ?>>
 								<img src="<?php echo $link_img; ?>" alt="<?php echo $contact_link['crb_link_name'] ?>">
 							</a>
 						</li>
