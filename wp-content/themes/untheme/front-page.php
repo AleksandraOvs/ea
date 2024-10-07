@@ -111,6 +111,7 @@
                 <?php
                 echo '<div class="portfolio-list">';
                 while ($query->have_posts()) {
+                   
                     $query->the_post();
                 ?>
                     <?php get_template_part('template-parts/content-portfolio') ?>

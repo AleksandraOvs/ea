@@ -10,7 +10,7 @@
 
 ?>
 
-<a href="#" id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+<a href="#" id="post-<?php the_ID(); ?>" class="toopacity">
 	<div class="portfolio-thumb">
 
 		<?php if (has_post_thumbnail()) {
