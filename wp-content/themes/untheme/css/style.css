@@ -19,6 +19,7 @@
 
 h1 {
     font-size: 42px;
+    color: var(--black);
     font-family: 'Cormorant', serif;
     font-weight: 400;
     line-height: 100%;
@@ -28,9 +29,11 @@ h1 {
 
 h2 {
     font-size: 42px;
+    color: var(--black);
     font-family: 'Cormorant', serif;
     font-weight: 400;
     line-height: 100%;
+    margin-bottom: 20px;
 }
 
 h3 {
@@ -210,7 +213,7 @@ h1.entry-title {
 }
 
 section {
-    padding: 7vh 0;
+    padding: 10vh 0;
 }
 
 section.background {
@@ -794,11 +797,85 @@ section.page-section.error-404.not-found .fixed-container .page-content .search-
     margin: 0 auto;
 }
 
+/*portfolio*/
+
+.portfolio-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content:space-between;
+}
+
+.portfolio-list a {
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    width: calc(100% / 4 - 15px);
+    height: 300px;
+    /* padding: 10px; */
+    border: 7px solid #fff;
+}
+
+.portfolio-thumb {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: 1;
+}
+
+.portfolio-thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    transition: filter .5s linear;
+}
+
+.portfolio-list a .article-content {
+    position: relative;
+    z-index: 2;
+    padding: 20px 10px;
+    background: rgba(255, 255, 255, .5);
+    background: linear-gradient(0deg, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 100%);
+}
+
+.portfolio-list a{
+    text-decoration: none;
+    transition: transform .5s ease-in-out;
+}
+
+.portfolio-list a .article-content h3 {
+    font-family: 'Cormorant', serif;
+    font-size: 28px;
+    font-weight: 600;
+    margin: 0;
+    color: var(--black);
+}
+
+.portfolio-list a:hover{
+    transform: scale(1.02) rotate(5deg);
+}
+
+.portfolio-list a:hover:nth-child(2n){
+    transform: scale(0.95) rotate(-4deg);
+}
+
+.portfolio-list a:hover img{
+    filter:brightness(1.2);
+}
+
 @media (max-width: 1440px) {
     .fixed-container {
         width: 100%;
         padding: 0 30px;
     }
+}
+
+@media (max-width: 1200px){
+    .portfolio-list a {
+        height: 220px;
+        }
 }
 
 @media (max-width: 992px) {
@@ -814,6 +891,11 @@ section.page-section.error-404.not-found .fixed-container .page-content .search-
 
     ul.decor-list {
         grid-template-columns: repeat(2, 1fr);
+    }
+
+    .portfolio-list a {
+        width: calc(100% / 2 - 5px);
+        margin-bottom:10px;
     }
 
 
@@ -867,6 +949,14 @@ section.page-section.error-404.not-found .fixed-container .page-content .search-
 }
 
 @media (max-width: 576px) {
+
+    .main-navigation {
+        top: 10%;
+        right: 2%;
+        width: 96%;
+        height: 80%;
+    }
+
     .site-header__right__contacts {
         display: none;
     }
@@ -1008,29 +1098,28 @@ section.page-section.error-404.not-found .fixed-container .page-content .search-
         align-items: center;
         justify-content: center;
         position: fixed;
-        width: 40px;
-        /* height: 40px; */
+        width: 100px;
+        min-height: 100px;
         opacity: 1;
         bottom: 10px;
         right: 10px;
-        background: #fff;
-        border-radius: 40px;
         z-index: 5;
         transition: all .8s linear;
     }
 
     .toggle-contacts-icon {
         display: block;
-        width: 40px;
-        padding: 7px;
-        height: 40px;
+        width: 100px;
+        padding: 20px;
+        height: 100px;
+        background: #fff;
+        border-radius: 100%;
     }
 
     ul.messengers-list._toggle-contacts {
         flex-direction: column;
-        transform: translateY(10px);
+        gap: 25px;
         opacity: 0;
-        display: none;
     }
 
     .toggle-contacts-icon svg {
@@ -1045,20 +1134,27 @@ section.page-section.error-404.not-found .fixed-container .page-content .search-
     }
 
     ul.messengers-list._toggle-contacts li {
-        width: 30px;
-        height: 30px;
-        transform: translateY(10px);
-         transition: transform cubic-bezier(.19, .18, .04, 1) .8s, opacity cubic-bezier(.47, 0, .94, .45) .5s;
-         opacity: 0;
-        /*transform: translate(-50px, 0);
-        opacity: 0; */
+        width: 90px;
+        height: 90px;
+        background: #fff;
+        border-radius: 100%;
+        padding: 25px;
+        transform: translateY(50px);
+        transition: transform .5s ease-in-out .5s;
+        opacity: 0;
+    }
+
+    ul.messengers-list._toggle-contacts.animate li{
+        opacity: 1;
+        transform: translateY(0);
+        transition: transform .5s linear, opacity .3s linear;
     }
 
     ul.messengers-list._toggle-contacts li.messengers-list__item a img {
-        width: 17px;
+        width: 100%;
         object-fit: contain;
         object-position: center;
-        height: 17px;
+        height: 100%;
     }
 
     ul.messengers-list._toggle-contacts li.messengers-list__item a {
@@ -1070,42 +1166,26 @@ section.page-section.error-404.not-found .fixed-container .page-content .search-
         justify-content: center;
         align-items: center;
         width: 100%;
-        /* height: 0; */
-        /* transition: all cubic-bezier(.19, .18, .04, 1) .8s; */
-        transition: all 0.8s linear;
     }
 
-    nav.nav.animate .menu li {
+    /* nav.nav.animate .menu li {
         transform: translate(0, 0);
-        opacity: 1;
-    }
-
-    .toggle-contacts__list.animate {
-        display: block;
-        width: 100%;
-        height: auto;
-        /* transition: all cubic-bezier(.19, .18, .04, 1) .3s;  */
-    }
-
-    .toggle-contacts__list.animate li{
-        transform: translateY(0);
-        transition: transform cubic-bezier(.19, .18, .04, 1) .8s, opacity cubic-bezier(.47, 0, .94, .45) .5s;
-        opacity: 1;
-    }
+        opacity: 0;
+    } */
 
     ul.messengers-list._toggle-contacts.animate {
         display: flex;
         opacity: 1;
+        transition: transform .5s ease-in-out .5s;
     }
+
+    /* ul.messengers-list._toggle-contacts.animate {
+        display: flex;
+        opacity: 1;
+    } */
 
     ul.messengers-list._toggle-contacts li a img {
         filter: brightness(0.4);
-    }
-
-    ul.messengers-list._toggle-contacts.animate .messengers-list__item {
-        /* opacity: 1;
-        transform: none;
-        transition: all cubic-bezier(.19, .18, .04, 1) .8s, transform cubic-bezier(.5, .8, .4, 1) .9s; */
     }
 
     a.toggle-contacts-icon.animate svg {
@@ -1113,45 +1193,60 @@ section.page-section.error-404.not-found .fixed-container .page-content .search-
     }
 
     a.toggle-contacts-icon.animate {
-        width: 100%;
-        height: 40px;
-        margin-top: 20px;
-        background: url(../images/svg/cancel.svg) no-repeat;
-        background-size: 15px;
+        width: 100px;
+        height: 100px;
+        margin-top: 40px;
+        background-color: #fff;
+        background-image: url(../images/svg/cancel.svg);
+        background-repeat: no-repeat;
+        background-size: 30px;
         background-position: center;
-        /* transition: all cubic-bezier(.19, .18, .04, 1) .8s; */
+        transition: transform .5s ease-in-out .5s;
     }
 
-    ul.messengers-list._toggle-contacts li {
+    /* ul.messengers-list._toggle-contacts li {
     transition: transform cubic-bezier(.19, .18, .04, 1) .8s, opacity cubic-bezier(.47, 0, .94, .45) .5s;
         transform: translate(0, -90px);
         opacity: 0;
-    }
-    ul.messengers-list._toggle-contacts.animate li {
+    } */
+    /* ul.messengers-list._toggle-contacts.animate li {
         transform: translate(0, 0);
         opacity: 1;
-        transition: transform cubic-bezier(.19, .18, .04, 1) .8s, opacity cubic-bezier(.47, 0, .94, .45) .5s;
-    } 
+        transition: transform .5s cubic-bezier(.19, .18, .04, 1) .8s, opacity .5s linear 1s;
+    }  */
+
+    
 
     ul.messengers-list._toggle-contacts.animate li:nth-child(1) {
-        transition-delay: .25s;
+        transition-delay: .3s;
     }
 
     ul.messengers-list._toggle-contacts.animate li:nth-child(2) {
-        transition-delay: .2s;
+        transition-delay: .25s;
     }
     ul.messengers-list._toggle-contacts.animate li:nth-child(3) {
-        transition-delay: .15s;
+        transition-delay: .2s;
     }
     ul.messengers-list._toggle-contacts.animate li:nth-child(4) {
-        transition-delay: .1s;
+        transition-delay: .15s;
     }
     ul.messengers-list._toggle-contacts.animate li:nth-child(5) {
-        transition-delay: .05s;
+        transition-delay: .1s;
     }
 
     section.page-section {
         padding: 80px 0 7vh;
+    }
+
+    .portfolio-list{
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .portfolio-list a {
+        width: 100%;
+        margin-bottom: 0;
+        height:300px;
     }
 }
 

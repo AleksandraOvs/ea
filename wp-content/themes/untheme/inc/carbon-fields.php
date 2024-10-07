@@ -40,7 +40,7 @@ function site_carbon()
                     Field::make('text', 'crb_contact_link', 'Ссылка мессенджера')
                         ->set_width(25),
                     Field::make('color', 'crb_contact_background', 'Цвет фона иконки')
-                    ->set_width(25),
+                        ->set_width(25),
                 )),
 
             Field::make('complex', 'crb_block_contacts_links', 'Ссылки в блоке Контакты')
@@ -52,7 +52,7 @@ function site_carbon()
                     Field::make('text', 'crb_block_contacts_link_link', 'Ссылка')
                         ->set_width(33),
                     Field::make('color', 'crb_block_contact_background', 'Цвет фона иконки')
-                    ->set_width(25),
+                        ->set_width(25),
                 )),
 
             Field::make('text', 'crb_map_code', 'Вставить яндекс карту')
@@ -150,6 +150,13 @@ function site_carbon()
                     Field::make('text', 'crb_hero_link_text', 'Текст ссылки слайда')
                         ->set_width(50),
                 )),
+        ))
+
+        ->add_tab(__('Контент второго блока'), array(
+            Field::make('text', 'crb_second_block_head', 'Заголовок блока')
+                ->set_width(33),
+            Field::make('rich_text', 'crb_second_block_text', 'Абзац')
+                ->set_width(50),
         ))
 
         ->add_tab(__('Блок Контакты'), array(

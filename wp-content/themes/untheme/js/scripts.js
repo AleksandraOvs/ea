@@ -151,10 +151,11 @@ document.addEventListener("DOMContentLoaded", () => {
     })();
 
     (function () {
-        $('.toggle-contacts-icon').on('click', function () {
+        $('.toggle-contacts-icon').on('click', function (e) {
             $(this).toggleClass('animate');
-            $('.toggle-contacts__list').toggleClass('animate');
-            $('._toggle-contacts').toggleClass('animate');
+            e.preventDefault();
+            $('.messengers-list._toggle-contacts').toggleClass('animate');
+            //$('._toggle-contacts').toggleClass('animate');
             //$('.background-container').toggleClass('animate');
         })
     })();
