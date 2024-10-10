@@ -1074,6 +1074,13 @@ section.page-section._single-post-portfolio .portfolio-thumb {
         width: 100%;
     }
 
+    .main-navigation {
+        top: 10%;
+        right: 2%;
+        width: 96%;
+        height: 80%;
+    }
+
 }
 
 @media (max-width: 768px) {
@@ -1136,13 +1143,6 @@ section.page-section._single-post-portfolio .portfolio-thumb {
 }
 
 @media (max-width: 576px) {
-
-    .main-navigation {
-        top: 10%;
-        right: 2%;
-        width: 96%;
-        height: 80%;
-    }
 
     .site-header__right__contacts {
         display: none;
