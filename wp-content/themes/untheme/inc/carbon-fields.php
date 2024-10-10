@@ -14,6 +14,8 @@ function site_carbon()
         ->set_page_menu_position(2)
         ->set_icon('dashicons-megaphone')
         ->add_tab(__('Контакты'), array(
+            Field::make("checkbox", "crb_show_on_footer", "Показывать ссылки в подвале")
+                ->set_option_value('yes'),
             Field::make('text', 'crb_header_link', 'Ссылка в шапке')
                 ->set_width(50),
             Field::make('text', 'crb_header_link_text', 'Текст ссылки в шапке')
@@ -57,52 +59,13 @@ function site_carbon()
 
             Field::make('text', 'crb_map_code', 'Вставить яндекс карту')
                 ->set_width(100),
-
-
-            // Field::make('text', 'crb_header_map', 'Заголовок')
-            //     ->set_width(33),
-            // Field::make('image', 'crb_header_map_icon', 'Иконка')
-            //     ->set_width(33),
-            // Field::make('text', 'crb_link_map', 'Ссылка')
-            //     ->help_text('слаг страницы, например /contacts')
-            //     ->set_width(33),
-
-
-
-            // Field::make('text', 'crb_header_shed', 'Часы работы')
-            //     ->set_width(50),
-            // Field::make('image', 'crb_header_shed_icon', 'Иконка')
-            //     ->set_width(50),
-
         ))
-
-        // ->add_tab(__('Мессенджеры'), array(
-        //     Field::make('complex', 'messengers', 'Ссылки на мессенджеры')
-        //         ->add_fields(array(
-
-        //             Field::make('text', 'crb_mes_name', 'Название')
-
-        //                 ->set_width(33),
-
-        //             Field::make('text', 'crb_mes_link', 'Ссылка на контакт')
-
-        //                 ->set_width(33),
-
-        //             Field::make('image', 'crb_mes_image', 'Иконка контакта')
-
-        //                 ->set_width(33),
-        //         ))
-        // ))
 
         ->add_tab(__('Форма заказа'), array(
             Field::make('text', 'crb_order_button_text', 'Текст кнопки заказа')
                 ->set_width(50),
             Field::make('text', 'crb_order_shortcode', 'Шорткод для формы заказа')
                 ->set_width(50),
-
-            // Field::make('text', 'crb_cf_adv', 'Контактная форма для страницы Реклама')
-            //     ->help_text('вставьте шорткод для формы обратной связи в это поле')
-            //     ->set_width(33),
 
         ))
 

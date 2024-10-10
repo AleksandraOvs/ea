@@ -45,7 +45,13 @@
 			}
 			?>
 
-			<?php get_template_part('template-parts/messengers') ?>
+			<?php 
+			if (carbon_get_theme_option('crb_show_on_footer')){
+				get_template_part('template-parts/messengers');
+			}
+
+			?>
+		 
 
 
 
