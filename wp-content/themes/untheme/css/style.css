@@ -847,13 +847,13 @@ section.section-portfolio .section-title {
     text-decoration: none;
 }
 
-.portfolio-list a .article-content h3 {
+/* .portfolio-list a .article-content h3 {
     font-family: 'Cormorant', serif;
     font-size: 28px;
     font-weight: 600;
     margin: 0;
     color: var(--dark);
-}
+} */
 
 .portfolio-list a:hover{
     transform: scale(1.03);
