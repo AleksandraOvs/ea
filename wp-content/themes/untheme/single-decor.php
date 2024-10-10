@@ -11,11 +11,7 @@ get_header();
 ?>
 
 <main id="primary" class="site-main">
-
 	<section class="page-section">
-
-		
-
 			<?php
 			while (have_posts()) :
 				the_post();
@@ -35,16 +31,8 @@ get_header();
 				dynamic_sidebar('page-sidebar');
 				echo '</aside>';
 			} ?>
-			
-
-
-
-
 	</section>
-
-
 </main><!-- #main -->
-
 <?php
 //get_sidebar();
 get_footer();

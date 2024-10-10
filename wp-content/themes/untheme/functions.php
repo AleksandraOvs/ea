@@ -232,3 +232,8 @@ function get_current_template($echo = false)
 	else
 		return $GLOBALS['current_theme_template'];
 }
+
+## Удаляет "Рубрика: ", "Метка: " и т.д. из заголовка архива
+add_filter( 'get_the_archive_title', function( $title ){
+	return preg_replace('~^[^:]+: ~', '', $title );
+});

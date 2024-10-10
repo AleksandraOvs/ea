@@ -144,6 +144,28 @@ function site_carbon()
 
         ));
 
+    Container::make('post_meta', 'Краткое описание проекта')
+        ->show_on_post_type('portfolio')
+        ->add_fields(array(
+            Field::make('rich_text', 'crb_portfolio_desc', 'Текст описания')
+        ));
+
+    Container::make('post_meta', 'Фотографии проекта')
+        ->show_on_post_type('portfolio')
+        ->add_fields(array(
+        Field::make('complex', 'crb_portfolio_pics', 'Изображения для слайдера')
+                ->add_fields(array(
+                    Field::make('image', 'crb_portfolio_image', 'Изображение проекта')
+                    ->set_width(33),
+                    Field::make('rich_text', 'crb_portfolio_image_desc', 'Описание к фото')
+                    ->set_width(33),
+                    Field::make('text', 'crb_portfolio_image_alt', 'Alt для изображения')
+                    ->set_width(33),
+                ))
+        ));
+
+
+
 
     //->add_tab(__('Блок Контакты'), array(
 

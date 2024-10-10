@@ -10,7 +10,7 @@
 
 ?>
 
-<a href="#" id="post-<?php the_ID(); ?>" class="toopacity">
+<a href="<?php the_permalink() ?>" id="post-<?php the_ID(); ?>" class="toopacity">
 	<div class="portfolio-thumb">
 
 		<?php if (has_post_thumbnail()) {
@@ -36,11 +36,9 @@
 
 
 		<?php
-		if (is_singular()) :
+		
 			the_title('<h3 class="post-title">', '</h3>');
-		else :
-			the_title('<h2 class="entry-title"><a href="' . esc_url(get_permalink()) . '" rel="bookmark">', '</a></h2>');
-		endif;
+		
 
 		if ('post' === get_post_type()) :
 		?>

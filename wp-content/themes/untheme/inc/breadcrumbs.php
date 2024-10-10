@@ -32,6 +32,10 @@ function site_breadcrumbs()
         } elseif (is_post_type_archive('decor')){
             echo post_type_archive_title();
 
+        } elseif (is_post_type_archive('portfolio')){
+            echo 'Портфолио';
+        } elseif (is_singular('portfolio')){
+            echo 'Портфолио';
         } elseif (is_tag()) {
 
             single_tag_title();

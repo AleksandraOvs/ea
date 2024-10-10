@@ -79,6 +79,6 @@ add_action( 'init', 'register_post_types' );
 			//'taxonomies'          => ['category'],
 			'has_archive'         => true,
 			'rewrite'             => true,
-			'query_var'           => true,
+			'query_var'           => 'portfolio',
 		] );
     }

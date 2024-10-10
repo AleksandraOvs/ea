@@ -87,7 +87,6 @@
 					</div>
 
 					<a href="#" class="menu-toggle">
-						<!-- <p class="hidden"><?php //esc_html_e('Primary Menu', 'untheme'); ?></p> -->
 						<div class="bar"></div>
 						<div class="bar"></div>
 						<div class="bar"></div>

@@ -6,14 +6,6 @@
     <section class="section-about background">
         <div class="fixed-container">
             <div class="section-about__content">
-                <!-- <div class="section-about__content">
-                <h2>Аренда декора для Вашего мероприятия</h2>
-                <p>Сделайте свое мероприятие незабываемым с нашей арендой декора!
-                    Наш разнообразный выбор декоративных элементов поможет вам создать уникальную атмосферу любого события – от свадьбы
-                    до корпоратива. Выбирайте из нашего ассортимента, чтобы добавить шарм и стиль вашему празднику.</p>
-                <p class="bold">Доверьтесь нам в организации декора, и ваше событие станет незабываемым для всех гостей!</p>
-            </div> -->
-
                 <?php
                 if ($second_heading = carbon_get_post_meta(get_the_ID(), 'crb_second_block_head')) {
                     echo '<h2>' . $second_heading . '</h2>';
@@ -41,7 +33,7 @@
                 <?php if ($contact_form_text = carbon_get_theme_option('crb_cf_description')) {
                     echo '<p>' . $contact_form_text . '</p>';
                 } ?>
-                <?php //echo $popup_sale_short 
+                <?php
                 if ($contact_form1) {
                     echo '<div class="contact-form-container">' . do_shortcode(" $contact_form1 ") . '</div>';
                 }
@@ -51,44 +43,6 @@
     <?php
     }
     ?>
-
-    <?php
-    // $args = [
-    //     'post_type'  => 'post',
-    //     'post_status' => 'publish',
-    //     'orderby' => 'date',
-    //     'category_name' => 'blog'
-    // ];
-    ?>
-
-    <?php //$the_query = new \WP_Query($args);  
-    ?>
-
-    <?php //if ($the_query->have_posts()) {
-    ?>
-    <!-- <section class="section-blog">
-            <div class="fixed-container">
-                <h2>Новости компании</h2>
-                <div class="section-blog-container">
-                    <?php
-                    // while ($the_query->have_posts()) {
-                    //     $the_query->the_post();  
-                    ?>
-                        <?php //get_template_part('template-parts/content') 
-                        ?>
-                    <?php //}
-                    ?>
-                </div>
-            </div>
-        </section> -->
-    <?php
-
-    //} 
-    ?>
-
-    <?php //wp_reset_postdata(); 
-    ?>
-
     <!-- Вывод портфолио -->
 
     <?php
@@ -111,7 +65,7 @@
                 <?php
                 echo '<div class="portfolio-list">';
                 while ($query->have_posts()) {
-                   
+
                     $query->the_post();
                 ?>
                     <?php get_template_part('template-parts/content-portfolio') ?>
