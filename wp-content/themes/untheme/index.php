@@ -1,4 +1,5 @@
 <?php
+
 /**
  * The main template file
  *
@@ -15,21 +16,29 @@
 get_header();
 ?>
 
-	<main id="primary" class="site-main">
-
+<main id="primary" class="site-main">
+	<section class="page-section">
+	<div class="fixed-container">
 		<?php
-		if ( have_posts() ) :
+		if (have_posts()) :
 
-			if ( is_home() && ! is_front_page() ) :
-				?>
+			if ( ! is_front_page()) :
+		?>
 				<header>
-					<h1 class="page-title screen-reader-text"><?php single_post_title(); ?></h1>
+					<ul class="breadcrumbs__list">
+						<?php echo site_breadcrumbs(); ?>
+					</ul>
+					<h2 class="page-title"><?php single_post_title(); ?></h2>
 				</header>
-				<?php
+
+				<div class="posts-list">
+
+				
+		<?php
 			endif;
 
 			/* Start the Loop */
-			while ( have_posts() ) :
+			while (have_posts()) :
 				the_post();
 
 				/*
@@ -37,20 +46,25 @@ get_header();
 				 * If you want to override this in a child theme, then include a file
 				 * called content-___.php (where ___ is the Post Type name) and that will be used instead.
 				 */
-				get_template_part( 'template-parts/content', get_post_type() );
+				get_template_part('template-parts/content', get_post_type());
 
 			endwhile;
 
 			the_posts_navigation();
 
+			if ( ! is_front_page()) : echo '</div>'; endif; 
+
 		else :
 
-			get_template_part( 'template-parts/content', 'none' );
+			get_template_part('template-parts/content', 'none');
 
 		endif;
 		?>
+	</div>
 
-	</main><!-- #main -->
+
+	</section>
+</main><!-- #main -->
 
 <?php
 get_sidebar();

@@ -1030,6 +1030,68 @@ section.page-section._single-post-portfolio .portfolio-thumb {
     gap: 20px;
 }
 
+.posts-list {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+.posts-list article.post .post-thumbnail{
+    height:100%;
+}
+
+.posts-list article.post .post-thumbnail img{
+    width:100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.posts-list article.post {
+    display: flex;
+    flex-direction: column;
+}
+
+.posts-list article.post .article-content{
+    margin-top:20px;
+}
+
+.posts-list article.post .article-content div h2 {
+    margin: 0;
+}
+
+.posts-list article.post .article-content .article-header__titles {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+
+.posts-list article.post .article-content .article-header__titles .articke-heading{
+    width: calc(100% - 100px);
+    
+}
+
+.posts-list article.post .article-content .article-header__titles .article-heading{
+    width: 70%;
+}
+
+.posts-list article.post .article-content .article-header__titles .article-heading h3 a{
+    text-align: left;
+    display: block;
+}
+
+.posts-list article.post .article-content .article-header__titles .entry-meta{
+    margin: 0;
+    text-align: right;
+}
+
+.single-post__page article .article-header, 
+.single-post__page article .entry-meta {
+    display: none;
+}
+
 @media (max-width: 1440px) {
     .fixed-container {
         width: 100%;
@@ -1050,6 +1112,11 @@ section.page-section._single-post-portfolio .portfolio-thumb {
     }
 
     ul.archive-list {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .posts-list {
+        display: grid;
         grid-template-columns: repeat(2, 1fr);
     }
 }
@@ -1143,6 +1210,11 @@ section.page-section._single-post-portfolio .portfolio-thumb {
 
     section.page-section._single-post-portfolio .portfolio-thumb {
         width: 100%;
+    }
+
+    .posts-list {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
     }
 }
 
