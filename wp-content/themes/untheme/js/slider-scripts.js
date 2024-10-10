@@ -18,9 +18,9 @@ const heroSwiper = new Swiper('.hero-slider', {
     //effect: 'fade',
     grabCursor: true, 
     //direction: 'vertical',
-    navigation: {
-    nextEl: '.portfolio-slider__button-next',
-    prevEl: '.portfolio-slider__button-prev',
-    },
+    // navigation: {
+    // nextEl: '.portfolio-slider__button-next',
+    // prevEl: '.portfolio-slider__button-prev',
+    // },
   
   });
