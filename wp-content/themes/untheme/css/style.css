@@ -1043,6 +1043,13 @@ section.page-section._single-post-portfolio .portfolio-thumb {
     }
 }
 
+@media (max-width: 1024px){
+    .swiper.portfolio-slider {
+        margin-top: 50px;
+        width: 80%;
+    }
+}
+
 @media (max-width: 992px) {
     .section-contacts__img {
         width: 100%;
@@ -1062,7 +1069,10 @@ section.page-section._single-post-portfolio .portfolio-thumb {
         width: calc(100% / 2 - 5px);
         margin-bottom: 10px;
     }
-
+    .swiper.portfolio-slider {
+        margin-top: 50px;
+        width: 100%;
+    }
 
 }
 
@@ -1266,6 +1276,12 @@ section.page-section._single-post-portfolio .portfolio-thumb {
 
     .site-info .messengers-list li.messengers-list__item a img {
         filter: unset;
+    }
+
+    .swiper-slide.portfolio-slider__slide a {
+        display: block;
+        width: 100px;
+        height: 100px;
     }
 
     /* TOGGLE CONTACTS */
