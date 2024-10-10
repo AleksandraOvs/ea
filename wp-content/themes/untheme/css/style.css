@@ -1048,6 +1048,10 @@ section.page-section._single-post-portfolio .portfolio-thumb {
         margin-top: 50px;
         width: 80%;
     }
+
+    ul.archive-list {
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
 
 @media (max-width: 992px) {
@@ -1282,6 +1286,10 @@ section.page-section._single-post-portfolio .portfolio-thumb {
         display: block;
         width: 100px;
         height: 100px;
+    }
+
+    ul.archive-list {
+        grid-template-columns: repeat(1, 1fr);
     }
 
     /* TOGGLE CONTACTS */
