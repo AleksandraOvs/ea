@@ -45,10 +45,10 @@ get_header();
 									$portfolio_pic_url = wp_get_attachment_image_url($portfolio_pic['crb_portfolio_image'], 'full');
 								?>
 									<div class="swiper-slide portfolio-slider__slide">
-										<a data-fancybox="gallery" href="<?php echo $portfolio_pic_url ?>">
+										<a data-fancybox="gallery" <?php if ($prf_desc = $portfolio_pic['crb_portfolio_image_desc']) : echo 'data-caption="'.$prf_desc.'"'; endif;?>  href="<?php echo $portfolio_pic_url ?>">
 											<img src="<?php echo $portfolio_pic_url ?>" alt="<?php $portfolio_pic['crb_portfolio_image_alt'] ?>">
 										</a>
-										<?php if ($prf_desc = $portfolio_pic['crb_portfolio_image_desc']) {
+										<?php if ($prf_desc) {
 										?>
 											<div class="portfolio-slider__slide__desc">
 												<?php echo $prf_desc ?>
@@ -102,7 +102,10 @@ get_header();
 
 				</div>
 			</div>
-
+			
+			<div class="single-post-portfolio__content">
+				<?php the_content() ?>
+			</div>
 			
 			<?php
 			if (is_active_sidebar('page-sidebar')) {

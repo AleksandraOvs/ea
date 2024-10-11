@@ -12,8 +12,8 @@ const heroSwiper = new Swiper('.hero-slider', {
   });
 
   const portfolioSwiper = new Swiper('.portfolio-slider', {
-    slidesPerView: 3,
-    spaceBetween: 30,
+    slidesPerView: 1,
+    spaceBetween: 0,
     //loop: true,
     //effect: 'fade',
     grabCursor: true, 
@@ -23,5 +23,13 @@ const heroSwiper = new Swiper('.hero-slider', {
     prevEl: '.portfolio-slider__button-prev',
     lockClass: 'hide-navi'
      },
+     breakpoints: {
+      // when window width is >= 320px
+      576: {
+          slidesPerView: 3,
+          spaceBetween: 30,
+          //slideToClickedSlide: true,
+      },
+  }
   
   });
