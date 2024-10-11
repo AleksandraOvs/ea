@@ -32,31 +32,7 @@ get_header();
 					<?php
 					}
 					?>
-
-					
-				</div>
-
-				<div class="portfolio-thumb">
-					<?php if (has_post_thumbnail()) {
-						the_post_thumbnail(
-							'post-thumbnail',
-							array(
-								'alt' => the_title_attribute(
-									array(
-										'echo' => false,
-									)
-								),
-							)
-						);
-					} else {
-						echo '<img src="' . get_stylesheet_directory_uri() . '/images/svg/placeholder-ea.svg" />';
-					}
-					?>
-
-				</div>
-			</div>
-
-			<?php if ($portfolio_pics = carbon_get_post_meta(get_the_ID(), 'crb_portfolio_pics')) {
+				<?php if ($portfolio_pics = carbon_get_post_meta(get_the_ID(), 'crb_portfolio_pics')) {
 					?>
 
 						<!-- Slider main container -->
@@ -104,6 +80,30 @@ get_header();
 					<?php
 					}
 					?>
+					
+				</div>
+
+				<div class="portfolio-thumb">
+					<?php if (has_post_thumbnail()) {
+						the_post_thumbnail(
+							'post-thumbnail',
+							array(
+								'alt' => the_title_attribute(
+									array(
+										'echo' => false,
+									)
+								),
+							)
+						);
+					} else {
+						echo '<img src="' . get_stylesheet_directory_uri() . '/images/svg/placeholder-ea.svg" />';
+					}
+					?>
+
+				</div>
+			</div>
+
+			
 			<?php
 			if (is_active_sidebar('page-sidebar')) {
 				echo '<aside class="page-sidebar">';
