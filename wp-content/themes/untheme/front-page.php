@@ -81,7 +81,7 @@
 
             ?>
 
-            <div class="section section-contacts" id="contacts">
+            <div class="section section-contacts" id="#contacts">
                 <?php
                 if ($section_background = carbon_get_post_meta(get_the_ID(), 'crb_contacts_background')) {
                     $section_background_url = wp_get_attachment_image_url($section_background, 'full')
