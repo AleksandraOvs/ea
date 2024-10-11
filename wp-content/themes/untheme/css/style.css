@@ -200,6 +200,10 @@ left: 20px;
     object-position: center;
 }
 
+.portfolio-slider__button-prev.hide-navi, .portfolio-slider__button-next.hide-navi {
+    display: none;
+}
+
 .swiper-slide.hero-slider__slide picture {
     display: block;
     height: 100%;
