@@ -66,28 +66,6 @@ function site_carbon()
                 ->set_width(50),
             Field::make('text', 'crb_order_shortcode', 'Шорткод для формы заказа')
                 ->set_width(50),
-
-        ))
-
-        ->add_tab(__('Файлы'), array(
-
-            Field::make("file", "crb_politics_file", "Файл политики (PDF)")
-                ->set_value_type('url'), // сохранить в метаполе ссылку на файл
-
-            Field::make("file", "crb_advertising_file", "Файл презентации для страницы Реклама (PDF)")
-                ->set_value_type('url'), // сохранить в метаполе ссылку на файл
-
-            Field::make("file", "crb_rent_file1", "Файл общей презентации для страницы Аренда (PDF)")
-                ->set_value_type('url'), // сохранить в метаполе ссылку на файл
-            Field::make("file", "crb_rent_file2", "Файл презентации по участку для страницы Аренда (PDF)")
-                ->set_value_type('url'), // сохранить в метаполе ссылку на файл
-
-        ))
-
-        ->add_tab(__('Другое'), array(
-
-            Field::make("image", "crb_footer_decor", "Декоративная картинка для футера")
-
         ));
 
 
