@@ -21,15 +21,8 @@ get_header();
 				<ul class="breadcrumbs__list">
 					<?php echo site_breadcrumbs(); ?>
 				</ul>
-				<?php
-				if (is_post_type_archive('portfolio')){
-					echo '<h2 class="page-title">Портфолио</h2>';
-				}else {
-					the_archive_title('<h2 class="page-title">', '</h2>');
-				the_archive_description('<div class="archive-description">', '</div>');
-				}
 				
-				?>
+				<h2 class="page-title"><?php echo single_term_title() ?></h2>
 
 			</header><!-- .page-header -->
 			<ul class="archive-list">

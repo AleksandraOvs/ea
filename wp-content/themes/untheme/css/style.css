@@ -114,7 +114,9 @@ h1.entry-title {
 .hero-slider__button-prev,
 .hero-slider__button-next,
 .portfolio-slider__button-prev,
-.portfolio-slider__button-next
+.portfolio-slider__button-next,
+.decor-slider__button-prev,
+.decor-slider__button-next
  {
     width: 40px;
     height: 40px;
@@ -136,7 +138,11 @@ h1.entry-title {
 .hero-slider__button-prev:hover,
 .hero-slider__button-next:hover,
 .portfolio-slider__button-prev:hover,
-.portfolio-slider__button-next:hover {
+.portfolio-slider__button-next:hover,
+.decor-slider__button-prev:hover,
+.decor-slider__button-next:hover
+
+{
     transform: scale(1.2);
     transition: all .5s linear;
 }
@@ -144,7 +150,10 @@ h1.entry-title {
 .hero-slider__button-prev.swiper-button-disabled:hover,
 .hero-slider__button-next.swiper-button-disabled:hover,
 .portfolio-slider__button-prev.swiper-button-disabled:hover,
-.portfolio-slider__button-next.swiper-button-disabled:hover {
+.portfolio-slider__button-next.swiper-button-disabled:hover,
+.decor-slider__button-next.swiper-button-disabled:hover,
+.decor-slider__button-next.swiper-button-disabled:hover,
+{
     cursor: default;
     transform: none;
 }
@@ -152,14 +161,19 @@ h1.entry-title {
 .hero-slider__button-prev.swiper-button-disabled,
 .hero-slider__button-next.swiper-button-disabled,
 .portfolio-slider__button-prev.swiper-button-disabled,
-.portfolio-slider__button-next.swiper-button-disabled {
+.portfolio-slider__button-next.swiper-button-disabled,
+.decor-slider__button-prev.swiper-button-disabled,
+.decor-slider__button-next.swiper-button-disabled {
     background: rgba(255, 255, 255, 0.5);
 }
 
 .hero-slider__button-prev.swiper-button-disabled svg,
 .hero-slider__button-next.swiper-button-disabled svg,
 .portfolio-slider__button-prev.swiper-button-disabled svg,
-.portfolio-slider__button-next.swiper-button-disabled svg {
+.portfolio-slider__button-next.swiper-button-disabled svg,
+.decor-slider__button-prev.swiper-button-disabled svg,
+.decor-slider__button-next.swiper-button-disabled svg
+ {
     opacity: .5;
 }
 
@@ -179,28 +193,43 @@ left: 20px;
     right: 20px;
 }
 
+.decor-slider__button-prev{
+    left: 20px;
+    }
+    
+    .decor-slider__button-next{
+        right: 20px;
+    }
+
 .portfolio-slider__button-prev,
-.portfolio-slider__button-next{
+.portfolio-slider__button-next,
+.decor-slider__button-prev,
+.decor-slider__button-next{
     top: 40%;
     background: #322828;
 }
 
 .portfolio-slider__button-prev svg path,
-.portfolio-slider__button-next svg path{
+.portfolio-slider__button-next svg path,
+.decor-slider__button-prev svg path,
+.decor-slider__button-next svg path{
     fill: #fff;
 }
 
 .hero-slider__button-prev svg,
 .hero-slider__button-next svg,
 .portfolio-slider__button-prev svg,
-.portfolio-slider__button-next svg {
+.portfolio-slider__button-next svg,
+.decor-slider__button-prev svg,
+.decor-slider__button-next svg {
     width: 25px;
     height: 20px;
     object-fit: contain;
     object-position: center;
 }
 
-.portfolio-slider__button-prev.hide-navi, .portfolio-slider__button-next.hide-navi {
+.portfolio-slider__button-prev.hide-navi, .portfolio-slider__button-next.hide-navi,
+.decor-slider__button-next.hide-navi, .decor-slider__button-prev.hide-navi {
     display: none;
 }
 
@@ -698,8 +727,8 @@ a.decor-item__link {
 
 ul.decor-items__list {
     list-style: none;
-    max-width: 80%;
-    margin: 30px auto;
+    /* max-width: 80%;
+    margin: 30px auto; */
 }
 
 .custom-page-content {
@@ -1011,39 +1040,43 @@ section.page-section._single-post-portfolio .portfolio-thumb {
     position: relative;
 }
 
-.swiper.portfolio-slider {
+.swiper.portfolio-slider, .swiper.decor-slider {
     margin-top: 50px;
     width: 100%;
     margin-left: 0;
 }
 
-.swiper-slide.portfolio-slider__slide a {
+.swiper-slide.portfolio-slider__slide a, .swiper-slide.decor-slider__slide a {
     display: block;
     width: 100%;
     height: 270px;
     overflow:hidden;
 }
 
-.swiper-slide.portfolio-slider__slide a img{
+.swiper-slide.portfolio-slider__slide a img, .swiper-slide.decor-slider__slide a img{
     width:100%;
     height: 100%;
     object-fit: cover;
     object-position: center;
 }
 
-.swiper-slide.portfolio-slider__slide {
+.swiper-slide.portfolio-slider__slide, .swiper-slide.decor-slider__slide {
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 0;
 }
 
-.portfolio-slider__slide__desc {
+.portfolio-slider__slide__desc, .decor-slider__slide__desc {
     position: absolute;
     bottom: 0;
     width: 100%;
     padding: 10px;
     background: rgba(255, 255, 255, .8);
+}
+
+.single-post-decor__header .decor-description {
+    width: 60%;
 }
 
 /* .portfolio-slider__slide__desc:after {
@@ -1133,6 +1166,11 @@ section.page-section._single-post-portfolio .portfolio-thumb {
 }
 
 @media (max-width: 1024px){
+    .fixed-container {
+        width: 100%;
+        padding: 0 15px;
+    }
+    
     .swiper.portfolio-slider {
         margin-top: 50px;
     }
@@ -1151,6 +1189,10 @@ section.page-section._single-post-portfolio .portfolio-thumb {
         width: 100%;
         height: 170px;
         overflow: hidden;
+    }
+
+    .single-post-decor__header .decor-description {
+        width: 100%;
     }
 }
 
@@ -1236,27 +1278,38 @@ section.page-section._single-post-portfolio .portfolio-thumb {
         display: block;
     }
 
-    section.page-section._single-post-portfolio .fixed-container div .portfolio-thumb{
+    section.page-section._single-post-portfolio .fixed-container div .portfolio-thumb,
+    section.page-section._single-post-decor .fixed-container div .portfolio-thumb{
         margin-top: 40px;
         margin-bottom: 40px;
     }
 
-    .portfolio-description {
+    .portfolio-description,
+    .decor-description{
         margin-top: 30px;
         text-align: justify;
     }
 
-    .single-post-portfolio__content {
+    .single-post-portfolio__content,
+    .single-post-decor__content {
         width: 100%;
     }
 
-    section.page-section._single-post-portfolio .portfolio-thumb {
+    section.page-section._single-post-portfolio .portfolio-thumb, 
+    section.page-section._single-post-decor .decor-thumb {
         width: 100%;
     }
 
     .posts-list {
         display: grid;
         grid-template-columns: repeat(1, 1fr);
+    }
+
+    .swiper-slide.portfolio-slider__slide a, .swiper-slide.decor-slider__slide a {
+        display: block;
+        width: 100%;
+        height: 350px;
+        overflow: hidden;
     }
 }
 

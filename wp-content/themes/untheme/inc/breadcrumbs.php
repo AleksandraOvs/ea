@@ -36,6 +36,9 @@ function site_breadcrumbs()
             echo 'Портфолио';
         } elseif (is_singular('portfolio')){
             echo 'Портфолио';
+
+        } elseif (taxonomy_exists('types')){
+            echo 'Декор для мероприятий';
         } elseif (is_tag()) {
 
             single_tag_title();

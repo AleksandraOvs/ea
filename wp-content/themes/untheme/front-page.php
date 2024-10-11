@@ -19,7 +19,8 @@
         </div>
     </section>
 
-    <?php get_template_part('template-parts/decor-query') ?>
+    <?php //get_template_part('template-parts/decor-query') ?>
+    <?php get_template_part('template-parts/types-query') ?>
 
 
     <?php if ($contact_form1 = carbon_get_theme_option('crb_cf')) {

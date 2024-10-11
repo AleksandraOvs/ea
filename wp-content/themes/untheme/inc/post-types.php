@@ -29,7 +29,7 @@ add_action( 'init', 'register_post_types' );
 			'show_in_menu'           => true, // показывать ли в меню админки
 			// 'show_in_admin_bar'   => null, // зависит от show_in_menu
 			'show_in_rest'        => true, // добавить в REST API. C WP 4.7
-			'rest_base'           => null, // $post_type. C WP 4.7
+			'rest_base'           => false, // $post_type. C WP 4.7
 			'menu_position'       => 4,
 			'menu_icon'           => 'dashicons-buddicons-groups',
 			//'capability_type'   => 'post',
@@ -37,11 +37,15 @@ add_action( 'init', 'register_post_types' );
 			//'map_meta_cap'      => null, // Ставим true чтобы включить дефолтный обработчик специальных прав
 			'hierarchical'        => true,
 			'supports'            => [ 'title','thumbnail', 'editor'], // 'title','editor','author','thumbnail','excerpt','trackbacks','custom-fields','comments','revisions','page-attributes','post-formats'
-			//'taxonomies'          => ['category'],
+			'taxonomies'          => ['types'],
 			'has_archive'         => true,
 			'rewrite'             => true,
 			'query_var'           => 'decor',
 		] );
+
+		//register_taxonomy( 'decor-type', [
+
+		//]);
 
 		register_post_type( 'portfolio', [
 			'label'  => null,
@@ -82,3 +86,28 @@ add_action( 'init', 'register_post_types' );
 			'query_var'           => 'portfolio',
 		] );
     }
+
+	/* Регистрируем иерархическую таксономию по жанрам
+ */
+add_action('init', function () {
+    $labels = array(
+        'name'          => 'Вид декора',
+        'singular_name' => 'Вид декора',
+        'menu_name'     => 'Виды декора' ,
+        'all_items'     => 'Все виды декора',
+        'edit_item'     => 'Редактировать вид декора',
+        'view_item'     => 'Посмотреть вид декора',
+        'update_item'   => 'Сохранить вид декора',
+        'add_new_item'  => 'Добавить новый вид декора',
+        'parent_item'   => 'Родительский вид декора',
+        'search_items'  => 'Поиск по видам декора',
+        'back_to_items' => 'Назад на страницу вида декоров',
+        'most_used'     => 'Популярные виды декоров',
+    );
+    $args = array(
+        'labels'            => $labels,
+        'show_admin_column' => true,
+        'hierarchical'      => true,
+    );
+    register_taxonomy('types', ['decor'], $args);
+});

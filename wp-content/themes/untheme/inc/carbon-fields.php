@@ -106,21 +106,21 @@ function site_carbon()
             Field::make('rich_text', 'crb_contacts_text_border', 'Текст для секции контактов (в рамочке)')
         ));
 
-    Container::make('post_meta', 'Добавить контент на эту страницу')
-        ->show_on_post_type('decor')
-        ->add_tab(__('Контент страницы декора'), array(
-            Field::make('rich_text', 'crb_decor_desc', 'Краткое описание страницы')
-                ->help_text('Фрагмент общего описания, выводится под заголовком страницы')
-                ->set_width(100),
+    //Container::make('post_meta', 'Добавить контент на эту страницу')
+    //->show_on_post_type('decor')
+    // ->add_tab(__('Контент страницы декора'), array(
+    //     Field::make('rich_text', 'crb_decor_desc', 'Краткое описание страницы')
+    //         ->help_text('Фрагмент общего описания, выводится под заголовком страницы')
+    //         ->set_width(100),
 
-            Field::make('complex', 'crb_decor_items', 'Продукция в этой категории')
-                ->add_fields(array(
-                    Field::make('image', 'crb_decor_item_img', 'Изображение декора'),
-                    Field::make('text', 'crb_decor_item_head', 'Название декора'),
-                    Field::make('rich_text', 'crb_decor_item_desc', 'Описание декора'),
-                ))
+    //     Field::make('complex', 'crb_decor_items', 'Продукция в этой категории')
+    //         ->add_fields(array(
+    //             Field::make('image', 'crb_decor_item_img', 'Изображение декора'),
+    //             Field::make('text', 'crb_decor_item_head', 'Название декора'),
+    //             Field::make('rich_text', 'crb_decor_item_desc', 'Описание декора'),
+    //         ))
 
-        ));
+    //));
 
     Container::make('post_meta', 'Краткое описание проекта')
         ->show_on_post_type('portfolio')
@@ -131,23 +131,40 @@ function site_carbon()
     Container::make('post_meta', 'Фотографии проекта')
         ->show_on_post_type('portfolio')
         ->add_fields(array(
-        Field::make('complex', 'crb_portfolio_pics', 'Изображения для слайдера')
+            Field::make('complex', 'crb_portfolio_pics', 'Изображения для слайдера')
                 ->add_fields(array(
                     Field::make('image', 'crb_portfolio_image', 'Изображение проекта')
-                    ->set_width(33),
+                        ->set_width(33),
                     Field::make('rich_text', 'crb_portfolio_image_desc', 'Описание к фото')
-                    ->set_width(33),
+                        ->set_width(33),
                     Field::make('text', 'crb_portfolio_image_alt', 'Alt для изображения')
-                    ->set_width(33),
+                        ->set_width(33),
                 ))
         ));
 
+    Container::make('post_meta', 'Информация о декоре')
+        ->show_on_post_type('decor')
+        ->add_fields(array(
+            Field::make('rich_text', 'crb_decor_desc', 'Текст описания')
+        ))
+        ->add_fields(array(
+            Field::make('complex', 'crb_decor_pics', 'Изображения для слайдера')
+                ->add_fields(array(
+                    Field::make('image', 'crb_decor_image', 'Изображение проекта')
+                        ->set_width(33),
+                    Field::make('rich_text', 'crb_decor_image_desc', 'Описание к фото')
+                        ->set_width(33),
+                    Field::make('text', 'crb_decor_image_alt', 'Alt для изображения')
+                        ->set_width(33),
+                ))
+        ));
 
+    /* TERM META */
 
-
-    //->add_tab(__('Блок Контакты'), array(
-
-    //))
-
-
+    Container::make('term_meta', 'Настройки таксономии')
+        ->show_on_taxonomy('types')
+        ->add_fields(array(
+            //Field::make('color', 'crb_title_color'),
+            Field::make('image', 'crb_type_thumb', 'Изображение Вида декора'),
+        ));
 }

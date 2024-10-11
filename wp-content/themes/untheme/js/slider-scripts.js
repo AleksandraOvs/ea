@@ -33,3 +33,26 @@ const heroSwiper = new Swiper('.hero-slider', {
   }
   
   });
+
+  const decorSwiper = new Swiper('.decor-slider', {
+    slidesPerView: 1,
+    spaceBetween: 0,
+    //loop: true,
+    //effect: 'fade',
+    grabCursor: true, 
+    //direction: 'vertical',
+    navigation: {
+    nextEl: '.decor-slider__button-next',
+    prevEl: '.decor-slider__button-prev',
+    lockClass: 'hide-navi'
+     },
+     breakpoints: {
+      // when window width is >= 320px
+      768: {
+          slidesPerView: 3,
+          spaceBetween: 30,
+          //slideToClickedSlide: true,
+      },
+  }
+  
+  });
