@@ -116,8 +116,7 @@ h1.entry-title {
 .portfolio-slider__button-prev,
 .portfolio-slider__button-next,
 .decor-slider__button-prev,
-.decor-slider__button-next
- {
+.decor-slider__button-next {
     width: 40px;
     height: 40px;
     display: flex;
@@ -140,9 +139,7 @@ h1.entry-title {
 .portfolio-slider__button-prev:hover,
 .portfolio-slider__button-next:hover,
 .decor-slider__button-prev:hover,
-.decor-slider__button-next:hover
-
-{
+.decor-slider__button-next:hover {
     transform: scale(1.2);
     transition: all .5s linear;
 }
@@ -154,8 +151,8 @@ h1.entry-title {
 .decor-slider__button-next.swiper-button-disabled:hover,
 .decor-slider__button-next.swiper-button-disabled:hover,
 {
-    cursor: default;
-    transform: none;
+cursor: default;
+transform: none;
 }
 
 .hero-slider__button-prev.swiper-button-disabled,
@@ -172,8 +169,7 @@ h1.entry-title {
 .portfolio-slider__button-prev.swiper-button-disabled svg,
 .portfolio-slider__button-next.swiper-button-disabled svg,
 .decor-slider__button-prev.swiper-button-disabled svg,
-.decor-slider__button-next.swiper-button-disabled svg
- {
+.decor-slider__button-next.swiper-button-disabled svg {
     opacity: .5;
 }
 
@@ -185,26 +181,26 @@ h1.entry-title {
     right: 30px;
 }
 
-.portfolio-slider__button-prev{
-left: 20px;
+.portfolio-slider__button-prev {
+    left: 20px;
 }
 
-.portfolio-slider__button-next{
+.portfolio-slider__button-next {
     right: 20px;
 }
 
-.decor-slider__button-prev{
+.decor-slider__button-prev {
     left: 20px;
-    }
-    
-    .decor-slider__button-next{
-        right: 20px;
-    }
+}
+
+.decor-slider__button-next {
+    right: 20px;
+}
 
 .portfolio-slider__button-prev,
 .portfolio-slider__button-next,
 .decor-slider__button-prev,
-.decor-slider__button-next{
+.decor-slider__button-next {
     top: 40%;
     background: #322828;
 }
@@ -212,7 +208,7 @@ left: 20px;
 .portfolio-slider__button-prev svg path,
 .portfolio-slider__button-next svg path,
 .decor-slider__button-prev svg path,
-.decor-slider__button-next svg path{
+.decor-slider__button-next svg path {
     fill: #fff;
 }
 
@@ -228,8 +224,10 @@ left: 20px;
     object-position: center;
 }
 
-.portfolio-slider__button-prev.hide-navi, .portfolio-slider__button-next.hide-navi,
-.decor-slider__button-next.hide-navi, .decor-slider__button-prev.hide-navi {
+.portfolio-slider__button-prev.hide-navi,
+.portfolio-slider__button-next.hide-navi,
+.decor-slider__button-next.hide-navi,
+.decor-slider__button-prev.hide-navi {
     display: none;
 }
 
@@ -959,7 +957,17 @@ li.archive-list__item a {
 
 .archive-list__item a:hover {
     color: var(--dark-turkey);
-  }
+}
+
+.archive-list__item a article.content-link {
+    position: relative;
+}
+
+.archive-list__item a article.content-link {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
 
 li.archive-list__item a div img,
 li.archive-list__item a img {
@@ -967,13 +975,13 @@ li.archive-list__item a img {
     height: 100%;
     object-fit: cover;
     object-position: center;
-    transition: transform .3s cubic-bezier( 0.88, 0.17, 0.1, 0.49 );
+    transition: transform .3s cubic-bezier(0.88, 0.17, 0.1, 0.49);
 }
 
 .archive-list__item a:hover .portfolio-thumb img,
 li.archive-list__item a:hover .content-link .content-thumb img {
     transform: scale(1.05);
-  }
+}
 
 li.archive-list__item .article-content {
     width: 100%;
@@ -994,18 +1002,18 @@ section.page-section._single-post-portfolio .portfolio-thumb {
     width: 100%;
 }
 
-    .single-post-portfolio__header {
-        display: grid;
-        grid-template-columns: 60% 35%;
-        align-items: stretch;
-        justify-content: space-between;
-    }
+.single-post-portfolio__header {
+    display: grid;
+    grid-template-columns: 60% 35%;
+    align-items: stretch;
+    justify-content: space-between;
+}
 
-    .single-post-portfolio__content{
-        margin-top: 40px;
-    }
+.single-post-portfolio__content {
+    margin-top: 40px;
+}
 
- .portfolio-description {
+.portfolio-description {
     margin-top: 30px;
 }
 
@@ -1052,34 +1060,39 @@ section.page-section._single-post-portfolio .portfolio-thumb {
     position: relative;
 }
 
-.swiper.portfolio-slider, .swiper.decor-slider {
+.swiper.portfolio-slider,
+.swiper.decor-slider {
     margin-top: 50px;
     width: 100%;
     margin-left: 0;
 }
 
-.swiper-slide.portfolio-slider__slide a, .swiper-slide.decor-slider__slide a {
+.swiper-slide.portfolio-slider__slide a,
+.swiper-slide.decor-slider__slide a {
     display: block;
     width: 100%;
     height: 270px;
-    overflow:hidden;
+    overflow: hidden;
 }
 
-.swiper-slide.portfolio-slider__slide a img, .swiper-slide.decor-slider__slide a img{
-    width:100%;
+.swiper-slide.portfolio-slider__slide a img,
+.swiper-slide.decor-slider__slide a img {
+    width: 100%;
     height: 100%;
     object-fit: cover;
     object-position: center;
 }
 
-.swiper-slide.portfolio-slider__slide, .swiper-slide.decor-slider__slide {
+.swiper-slide.portfolio-slider__slide,
+.swiper-slide.decor-slider__slide {
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 0;
 }
 
-.portfolio-slider__slide__desc, .decor-slider__slide__desc {
+.portfolio-slider__slide__desc,
+.decor-slider__slide__desc {
     position: absolute;
     bottom: 0;
     width: 100%;
@@ -1110,12 +1123,12 @@ section.page-section._single-post-portfolio .portfolio-thumb {
     gap: 30px;
 }
 
-.posts-list article.post .post-thumbnail{
-    height:100%;
+.posts-list article.post .post-thumbnail {
+    height: 100%;
 }
 
-.posts-list article.post .post-thumbnail img{
-    width:100%;
+.posts-list article.post .post-thumbnail img {
+    width: 100%;
     height: 100%;
     object-fit: cover;
     object-position: center;
@@ -1126,8 +1139,8 @@ section.page-section._single-post-portfolio .portfolio-thumb {
     flex-direction: column;
 }
 
-.posts-list article.post .article-content{
-    margin-top:20px;
+.posts-list article.post .article-content {
+    margin-top: 20px;
 }
 
 .posts-list article.post .article-content div h2 {
@@ -1140,26 +1153,26 @@ section.page-section._single-post-portfolio .portfolio-thumb {
     justify-content: space-between;
 }
 
-.posts-list article.post .article-content .article-header__titles .articke-heading{
+.posts-list article.post .article-content .article-header__titles .articke-heading {
     width: calc(100% - 100px);
-    
+
 }
 
-.posts-list article.post .article-content .article-header__titles .article-heading{
+.posts-list article.post .article-content .article-header__titles .article-heading {
     width: 70%;
 }
 
-.posts-list article.post .article-content .article-header__titles .article-heading h3 a{
+.posts-list article.post .article-content .article-header__titles .article-heading h3 a {
     text-align: left;
     display: block;
 }
 
-.posts-list article.post .article-content .article-header__titles .entry-meta{
+.posts-list article.post .article-content .article-header__titles .entry-meta {
     margin: 0;
     text-align: right;
 }
 
-.single-post__page article .article-header, 
+.single-post__page article .article-header,
 .single-post__page article .entry-meta {
     display: none;
 }
@@ -1177,12 +1190,12 @@ section.page-section._single-post-portfolio .portfolio-thumb {
     }
 }
 
-@media (max-width: 1024px){
+@media (max-width: 1024px) {
     .fixed-container {
         width: 100%;
         padding: 0 15px;
     }
-    
+
     .swiper.portfolio-slider {
         margin-top: 50px;
     }
@@ -1227,6 +1240,7 @@ section.page-section._single-post-portfolio .portfolio-thumb {
         width: calc(100% / 2 - 5px);
         margin-bottom: 10px;
     }
+
     .swiper.portfolio-slider {
         margin-top: 50px;
         width: 100%;
@@ -1291,13 +1305,13 @@ section.page-section._single-post-portfolio .portfolio-thumb {
     }
 
     section.page-section._single-post-portfolio .fixed-container div .portfolio-thumb,
-    section.page-section._single-post-decor .fixed-container div .portfolio-thumb{
+    section.page-section._single-post-decor .fixed-container div .portfolio-thumb {
         margin-top: 40px;
         margin-bottom: 40px;
     }
 
     .portfolio-description,
-    .decor-description{
+    .decor-description {
         margin-top: 30px;
         text-align: justify;
     }
@@ -1307,7 +1321,7 @@ section.page-section._single-post-portfolio .portfolio-thumb {
         width: 100%;
     }
 
-    section.page-section._single-post-portfolio .portfolio-thumb, 
+    section.page-section._single-post-portfolio .portfolio-thumb,
     section.page-section._single-post-decor .decor-thumb {
         width: 100%;
     }
@@ -1317,7 +1331,8 @@ section.page-section._single-post-portfolio .portfolio-thumb {
         grid-template-columns: repeat(1, 1fr);
     }
 
-    .swiper-slide.portfolio-slider__slide a, .swiper-slide.decor-slider__slide a {
+    .swiper-slide.portfolio-slider__slide a,
+    .swiper-slide.decor-slider__slide a {
         display: block;
         width: 100%;
         height: 350px;
