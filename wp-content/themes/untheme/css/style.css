@@ -953,6 +953,7 @@ li.archive-list__item a {
     display: block;
     width: 100%;
     height: 100%;
+    overflow: hidden;
     transition: all .5s ease-in-out;
 }
 
@@ -966,7 +967,12 @@ li.archive-list__item a img {
     height: 100%;
     object-fit: cover;
     object-position: center;
+    transition: transform .3s cubic-bezier( 0.88, 0.17, 0.1, 0.49 );
 }
+
+.archive-list__item a:hover .portfolio-thumb img {
+    transform: scale(1.05);
+  }
 
 li.archive-list__item .article-content {
     width: 100%;
