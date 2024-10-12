@@ -20,41 +20,45 @@ get_header();
 				<div class="fixed-container">
 					<ul class="breadcrumbs__list">
 						<?php echo site_breadcrumbs(); ?>
+						<h2 class="page-title">Портфолио</h2>
 					</ul>
 					<?php
-					the_archive_title('<h1 class="page-title">', '</h1>');
 					the_archive_description('<div class="archive-description">', '</div>');
 					?>
 				</div>
 
 
 			</header><!-- .page-header -->
-			<ul class="archive-portfolio__list">
-		<?php
-			/* Start the Loop */
-			while (have_posts()) :
-				the_post();
 
-				/*
+			<div class="fixed-container">
+				<ul class="archive-list">
+				<?php
+				/* Start the Loop */
+				while (have_posts()) :
+					the_post();
+
+					/*
 				 * Include the Post-Type-specific template for the content.
 				 * If you want to override this in a child theme, then include a file
 				 * called content-___.php (where ___ is the Post Type name) and that will be used instead.
 				 */
-				//echo '<div class="fixed-container">';
-				echo '<li class="archive-portfolio__list__item">';
-				get_template_part('template-parts/content', get_post_type());
-				echo '</li>';
+					//echo '<div class="fixed-container">';
+					echo '<li class="archive-list__item">';
+					get_template_part('template-parts/content', get_post_type());
+					echo '</li>';
 				//echo '</div>';
-			endwhile;
-			echo '</ul>';
-			the_posts_navigation();
+				endwhile;
+				echo '</ul>';
+				the_posts_navigation();
 
-		else :
+			else :
 
-			get_template_part('template-parts/content', 'none');
+				get_template_part('template-parts/content', 'none');
 
-		endif;
-		?>
+			endif;
+				?>
+			</div>
+
 
 	</section>
 </main><!-- #main -->

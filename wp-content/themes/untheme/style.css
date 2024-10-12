@@ -593,6 +593,7 @@ table {
 --------------------------------------------- */
 a {
 	color: var(--black);
+	transition: all .5s ease-in-out;
 }
 
 /* a:visited {
@@ -602,7 +603,7 @@ a {
 a:hover,
 a:focus,
 a:active {
-	color: var(--dark-turkey);
+	color: var(--green);
 }
 
 a:focus {
@@ -914,13 +915,13 @@ a.menu-toggle .bar {
     transition: transform cubic-bezier(.89, 0, .08, 1) 1.5s, width cubic-bezier(.89, 0, .08, 1) 1.5s, background .3s;
 }
 
-a.menu-toggle:hover .bar,
+/* a.menu-toggle:hover .bar,
 a.menu-toggle.animate:hover .bar {
     background: var(--dark);
-}
+} */
 
 a.menu-toggle.animate .bar {
-    background: var(--dark);
+    background: var(--green);
 }
 
 a.menu-toggle.animate .bar:nth-child(1) {
