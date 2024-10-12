@@ -980,12 +980,13 @@ li.archive-list__item a img {
     height: 100%;
     object-fit: cover;
     object-position: center;
-    transition: transform .3s cubic-bezier(0.88, 0.17, 0.1, 0.49);
+    transition: transform .3s cubic-bezier(0.88, 0.17, 0.1, 0.49), filter .5 linear;
 }
 
 .archive-list__item a:hover .portfolio-thumb img,
 li.archive-list__item a:hover .content-link .content-thumb img {
     transform: scale(1.05);
+    filter: brightness(1.09);
 }
 
 li.archive-list__item .article-content {
