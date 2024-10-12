@@ -969,6 +969,11 @@ li.archive-list__item a {
     height: 100%;
 }
 
+.archive-list__item a article.content-link .content-thumb {
+    width: 100%;
+    height: 100%;
+  }
+
 li.archive-list__item a div img,
 li.archive-list__item a img {
     width: 100%;
