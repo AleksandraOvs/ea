@@ -78,13 +78,29 @@ get_header();
 				}
 				?>
 
-				<?php
-				if ($decor_description = carbon_get_post_meta(get_the_ID(), 'crb_decor_desc')) {
-				?>
-					<div class="decor-description"><?php echo $decor_description ?></div>
-				<?php
-				}
-				?>
+				<div class="decor__content">
+					<?php
+					if ($decor_description = carbon_get_post_meta(get_the_ID(), 'crb_decor_desc')) {
+					?>
+						<div class="decor-description"><?php echo $decor_description ?></div>
+					<?php
+					}
+					?>
+
+					<a class="btn-link" data-fancybox data-src="#popup-order" href="javascript:;" class="decor-item__contacts__button">
+						<?php
+						if ($order_button_text = carbon_get_theme_option(get_the_ID(), 'crb_order_button_text')) {
+							echo $order_button_text;
+						} else {
+							echo 'Заказать';
+						}
+						?>
+					</a>
+
+
+				</div>
+
+
 			</div>
 
 			<div class="single-post__content">
