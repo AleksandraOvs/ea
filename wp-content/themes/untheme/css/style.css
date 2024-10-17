@@ -833,6 +833,7 @@ button.fancybox-button.fancybox-close-small {
 .fancybox-button {
     width: 30px;
     height: 30px;
+    padding: 5px;
 }
 
 section.page-section.error-404.not-found .fixed-container .page-content p {
