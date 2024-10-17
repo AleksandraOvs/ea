@@ -1000,7 +1000,7 @@ li.archive-list__item .article-content {
     width: 100%;
     padding: 20px 10px;
     background: rgba(255, 255, 255, .5);
-    position: absolute;
+    position: relative;
     bottom: 0;
     z-index: 2;
 }
