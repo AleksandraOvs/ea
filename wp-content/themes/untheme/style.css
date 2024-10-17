@@ -792,6 +792,10 @@ textarea:focus {
 	border-color: var(--dark);
 } 
 
+#popup-order button:hover {
+	color: #fff !important;
+  }
+
 select {
 	border: 1px solid #ccc;
 }
