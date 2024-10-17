@@ -966,14 +966,20 @@ li.archive-list__item a {
 
 .archive-list__item a article.content-link {
     position: relative;
-    width: 100%;
-    height: 100%;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
 .archive-list__item a article.content-link .content-thumb {
     width: 100%;
-    height: 100%;
+  height: calc(100% - 70px);
 }
+
+.content-link .article-content h3 {
+    font-size: 18px;
+  }
 
 li.archive-list__item a div img,
 li.archive-list__item a img {
