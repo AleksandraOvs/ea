@@ -25,11 +25,17 @@ const heroSwiper = new Swiper('.hero-slider', {
      },
      breakpoints: {
       // when window width is >= 320px
-      576: {
+      1024: {
           slidesPerView: 3,
           spaceBetween: 30,
           //slideToClickedSlide: true,
       },
+
+      375: {
+        slidesPerView: 1,
+        //spaceBetween: 30,
+        //slideToClickedSlide: true,
+    },
   }
   
   });
