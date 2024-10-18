@@ -945,6 +945,11 @@ ul.archive-list {
 li.archive-list__item {
     position: relative;
     height: 300px;
+  }
+
+li.archive-list__item {
+    position: relative;
+    height: 300px;
 }
 
 li.archive-list__item a {
