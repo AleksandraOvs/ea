@@ -1259,9 +1259,9 @@ section.page-section._single-post-portfolio .portfolio-thumb {
     .swiper-slide.portfolio-slider__slide a {
         display: block;
         width: 100%;
-        height: 170px;
+        height: 350px;
         overflow: hidden;
-    }
+      }
 
     .single-post-decor__header .decor-description {
         width: 100%;
@@ -1276,6 +1276,18 @@ section.page-section._single-post-portfolio .portfolio-thumb {
         grid-template-columns: 60% 35%;
         align-items: stretch;
         justify-content: space-between;
+      }
+
+      .page-section._single-post-portfolio h2, .page-section._single-post-portfolio .portfolio-description {
+        text-align: center;
+        width:70%;
+        margin-left: auto;
+        margin-right: auto
+      }
+
+      ._single-post-portfolio .fixed-container .content {
+        margin: 50px auto 30px;
+        width: 70%;
       }
 }
 

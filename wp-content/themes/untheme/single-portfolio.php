@@ -103,7 +103,7 @@ get_header();
 				</div>
 			</div>
 			
-			<div class="single-post-portfolio__content">
+			<div class="content">
 				<?php the_content() ?>
 			</div>
 			
