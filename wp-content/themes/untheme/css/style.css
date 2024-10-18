@@ -1311,10 +1311,10 @@ section.page-section._single-post-portfolio .portfolio-thumb {
         margin-bottom: 10px;
     }
 
-    .swiper.portfolio-slider {
+    /* .swiper.portfolio-slider {
         margin-top: 50px;
         width: 100%;
-    }
+    } */
 
     .site-header__right #site-navigation.main-navigation {
         top: 10%;
@@ -1436,6 +1436,19 @@ section.page-section._single-post-portfolio .portfolio-thumb {
     .single-post-decor__header .post-title {
         text-align: center;
     }
+
+    .page-section._single-post-portfolio h2, .page-section._single-post-portfolio .portfolio-description {
+        text-align: left;
+        width: 100%;
+      }
+
+      .swiper.portfolio-slider {
+        width: 70%;
+      }
+
+      ._single-post-portfolio .fixed-container .content {
+        width: 100%;
+      }
 }
 
 @media (max-width: 576px) {
