@@ -23,20 +23,16 @@ const heroSwiper = new Swiper('.hero-slider', {
     prevEl: '.portfolio-slider__button-prev',
     lockClass: 'hide-navi'
      },
-     breakpoints: {
-      // when window width is >= 320px
-      1024: {
-          slidesPerView: 3,
-          spaceBetween: 30,
-          //slideToClickedSlide: true,
-      },
+  //    breakpoints: {
+  //     1024: {
+  //         slidesPerView: 3,
+  //         spaceBetween: 30,
+  //     },
 
-      375: {
-        slidesPerView: 1,
-        //spaceBetween: 30,
-        //slideToClickedSlide: true,
-    },
-  }
+  //     375: {
+  //       slidesPerView: 1,
+  //   },
+  // }
   
   });
 

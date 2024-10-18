@@ -1016,24 +1016,20 @@ section.page-section._single-post-portfolio .portfolio-thumb {
     width: 100%;
 }
 
-.single-post-portfolio__header {
-    display: grid;
-    grid-template-columns: 60% 35%;
-    align-items: stretch;
-    justify-content: space-between;
-}
-
 .single-post-portfolio__content {
     margin-top: 40px;
 }
 
-.portfolio-description {
-    margin-top: 30px;
-    margin-bottom: 30px;
+.single-post-portfolio__content {
+    display: flex;
+    align-items: stretch;
+    justify-content: space-between;
 }
 
-.single-post-portfolio__content {
-    width: 100%;
+.swiper.portfolio-slider {
+    width: 40%;
+    height: 100%;
+    margin-left: 0;
 }
 
 .portfolio-thumb img {
@@ -1076,8 +1072,16 @@ section.page-section._single-post-portfolio .portfolio-thumb {
 }
 
 .swiper.portfolio-slider {
-    width: 100%;
+    width: 40%;
+    height: 100%;
     margin-left: 0;
+}
+
+.portfolio-description {
+    width: 58%;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
 }
 
 .swiper.decor-slider {
@@ -1104,7 +1108,7 @@ section.page-section._single-post-portfolio .portfolio-thumb {
 .swiper-slide.decor-slider__slide a {
     display: block;
     width: 100%;
-    height: 270px;
+    height: 370px;
     overflow: hidden;
 }
 
@@ -1247,11 +1251,6 @@ section.page-section._single-post-portfolio .portfolio-thumb {
         padding: 0 15px;
     }
 
-    .swiper.portfolio-slider {
-        width: 50%;
-        margin: 50px auto;
-    }
-
     ul.archive-list {
         grid-template-columns: repeat(2, 1fr);
     }
@@ -1266,7 +1265,7 @@ section.page-section._single-post-portfolio .portfolio-thumb {
         width: 100%;
         height: 350px;
         overflow: hidden;
-      }
+    }
 
     .single-post-decor__header .decor-description {
         width: 100%;
@@ -1274,26 +1273,19 @@ section.page-section._single-post-portfolio .portfolio-thumb {
 
     .single-post-portfolio__header .portfolio-thumb {
         display: none;
-      }
+    }
 
-      .single-post-portfolio__header {
+    .single-post-portfolio__header {
         display: block;
         grid-template-columns: 60% 35%;
         align-items: stretch;
         justify-content: space-between;
-      }
+    }
 
-      .page-section._single-post-portfolio h2, .page-section._single-post-portfolio .portfolio-description {
-        text-align: center;
-        width:70%;
-        margin-left: auto;
-        margin-right: auto
-      }
-
-      ._single-post-portfolio .fixed-container .content {
+    ._single-post-portfolio .fixed-container .content {
         margin: 50px auto 30px;
         width: 70%;
-      }
+    }
 }
 
 @media (max-width: 992px) {
@@ -1391,11 +1383,18 @@ section.page-section._single-post-portfolio .portfolio-thumb {
         margin-bottom: 40px;
     }
 
-    .portfolio-description,
+
     .decor-description {
         margin-top: 30px;
         text-align: justify;
     }
+
+    .portfolio-description {
+        text-align: justify;
+        margin: 30px auto 0;
+        width: 70%;
+    }
+
 
     .single-post-portfolio__content,
     .single-post-decor__content {
@@ -1442,18 +1441,29 @@ section.page-section._single-post-portfolio .portfolio-thumb {
         text-align: center;
     }
 
-    .page-section._single-post-portfolio h2, .page-section._single-post-portfolio .portfolio-description {
+    .single-post-portfolio__content,
+    .single-post-decor__content {
+        display: block;
+    }
+
+    .swiper.portfolio-slider {
+        width: 70%;
+        margin: 0 auto;
+    }
+
+    /* .page-section._single-post-portfolio h2,
+    .page-section._single-post-portfolio .portfolio-description {
         text-align: left;
         width: 100%;
-      }
+    }
 
-      .swiper.portfolio-slider {
+    .swiper.portfolio-slider {
         width: 70%;
-      }
+    }
 
-      ._single-post-portfolio .fixed-container .content {
+    ._single-post-portfolio .fixed-container .content {
         width: 100%;
-      }
+    } */
 }
 
 @media (max-width: 576px) {
@@ -1613,7 +1623,17 @@ section.page-section._single-post-portfolio .portfolio-thumb {
 
     .swiper.portfolio-slider {
         width: 100%;
-      }
+    }
+
+    .single-post-portfolio__header h2 {
+        text-align: center;
+    }
+
+    .page-section._single-post-portfolio .portfolio-description {
+        width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+    }
 
     /* TOGGLE CONTACTS */
     .toggle-contacts__bar {
