@@ -1606,6 +1606,10 @@ section.page-section._single-post-portfolio .portfolio-thumb {
         margin: 30px auto 0;
     }
 
+    .swiper.portfolio-slider {
+        width: 100%;
+      }
+
     /* TOGGLE CONTACTS */
     .toggle-contacts__bar {
         display: flex;
