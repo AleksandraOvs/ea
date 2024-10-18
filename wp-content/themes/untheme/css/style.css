@@ -942,15 +942,12 @@ ul.archive-list {
     gap: 30px;
 }
 
+
 li.archive-list__item {
     position: relative;
     height: 300px;
   }
 
-li.archive-list__item {
-    position: relative;
-    height: 300px;
-}
 
 li.archive-list__item a {
     position: relative;
@@ -1003,11 +1000,11 @@ li.archive-list__item a:hover .content-link .content-thumb img {
 
 li.archive-list__item .article-content {
     width: 100%;
-    padding: 10px;
-    /* background: rgba(255, 255, 255, .5); */
-    position: relative;
-    bottom: 0;
-    z-index: 2;
+  padding: 10px;
+  background: rgba(255, 255, 255, .5);
+  position: absolute;
+  bottom: 0;
+  z-index: 2;
 }
 
 li.archive-list__item a .article-content h3 {
