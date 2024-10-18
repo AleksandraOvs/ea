@@ -1243,7 +1243,8 @@ section.page-section._single-post-portfolio .portfolio-thumb {
     }
 
     .swiper.portfolio-slider {
-        margin-top: 50px;
+        width: 50%;
+        margin: 50px auto;
     }
 
     ul.archive-list {
