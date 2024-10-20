@@ -944,9 +944,20 @@ ul.archive-list {
 
 li.archive-list__item {
     position: relative;
-    height: 300px;
+  background: #fff;
+  padding: 10px 10px 010px;
+  box-shadow: 0 0 10px rgba(50,50,50,.2);
+  transition: all .5s ease-in-out;
 }
 
+.archive-list__item:hover {
+    box-shadow: 0 0 3px rgba(50,50,50,.4);
+    transform:rotate(2deg);
+  }
+
+  .archive-list__item:nth-child(2):hover{
+    transform:rotate(-2deg);
+  }
 
 li.archive-list__item a {
     position: relative;
@@ -1000,8 +1011,8 @@ li.archive-list__item a:hover .content-link .content-thumb img {
 li.archive-list__item .article-content {
     width: 100%;
     padding: 10px;
-    background: rgba(255, 255, 255, .5);
-    position: absolute;
+    /* background: rgba(255, 255, 255, .5);
+    position: absolute; */
     bottom: 0;
     z-index: 2;
 }
