@@ -31,8 +31,9 @@
 		?>
 
 	</div>
+</a><!-- #post-<?php the_ID(); ?> -->
 
-	<div class="article-content">
+<div class="article-content">
 
 
 		<?php
@@ -54,6 +55,3 @@
 		<?php //the_content() 
 		?>
 	</div>
-
-
-</a><!-- #post-<?php the_ID(); ?> -->
