@@ -64,15 +64,19 @@
                     Портфолио
                 </h2>
                 <?php
-                echo '<ul class="archive-list"><li class="archive-list__item">';
+                echo '<ul class="archive-list">';
                 while ($query->have_posts()) {
 
                     $query->the_post();
                 ?>
-                    <?php get_template_part('template-parts/content-portfolio') ?>
+                    <?php
+                    echo '<li class="archive-list__item">';
+                    get_template_part('template-parts/content-portfolio')
+                    echo '</li>';
+                    ?>
             <?php
                 }
-                echo '</li></ul></section>';
+                echo '</ul></section>';
             } else {
                 // Постов не найдено
             }
