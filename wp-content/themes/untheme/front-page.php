@@ -71,7 +71,7 @@
                 ?>
                     <?php
                     echo '<li class="archive-list__item">';
-                    get_template_part('template-parts/content-portfolio')
+                    get_template_part('template-parts/content-portfolio');
                     echo '</li>';
                     ?>
             <?php
