@@ -64,7 +64,7 @@
                     Портфолио
                 </h2>
                 <?php
-                echo '<div class="portfolio-list">';
+                echo '<ul class="archive-list"><li class="archive-list__item">';
                 while ($query->have_posts()) {
 
                     $query->the_post();
@@ -72,7 +72,7 @@
                     <?php get_template_part('template-parts/content-portfolio') ?>
             <?php
                 }
-                echo '</div></div></section>';
+                echo '</li></ul></section>';
             } else {
                 // Постов не найдено
             }
