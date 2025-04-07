@@ -21,7 +21,7 @@ get_header();
 					<span>/</span>
 					<a href="<?php echo site_url('portfolio') ?>">Портфолио</a>
 					<span>/</span>
-					<?php the_title() ?>
+					<p><?php the_title() ?></p>
 				</ul>
 				<?php the_title('<h2 class="post-title">', '</h2>'); ?>
 			</div>

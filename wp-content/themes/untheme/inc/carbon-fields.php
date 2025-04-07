@@ -78,13 +78,15 @@ function site_carbon()
         ->add_tab(__('Слайдер первого экрана'), array(
             Field::make('complex', 'crb_hero_slides', 'Слайды первого экрана')
                 ->add_fields(array(
+                    Field::make("checkbox", "crb_darker_pic", "Включить затемнение слайда")
+                        ->set_option_value('yes'),
                     Field::make('image', 'crb_hero_img', 'Изображение для слайда')
                         ->set_width(50),
                     Field::make('image', 'crb_hero_img_mob', 'Изображение для слайда(мобильная версия)')
                         ->set_width(50),
                     Field::make('text', 'crb_hero_heading', 'Заголовок слайда')
                         ->set_width(33),
-                    Field::make('text', 'crb_hero_desc', 'Описание слайда')
+                    Field::make('rich_text', 'crb_hero_desc', 'Описание слайда')
                         ->set_width(33),
                     Field::make('text', 'crb_hero_link', 'Ссылка слайда')
                         ->set_width(50),

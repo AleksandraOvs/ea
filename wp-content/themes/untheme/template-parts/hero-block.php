@@ -19,25 +19,42 @@
                             <img src="<?php echo $hero_pic_url; ?>">
                         </picture>
 
+                        <?php
+                        if ($hero_pic_dark = $hero_pic['crb_darker_pic']){
+                            echo '<div class="slide-overlay"><h1>xzxzxzxzx</h1></div>';
+                        }
+                            ?>
 
-                        <div class="hero-slider__content">
-                            <div class="fixed-container">
+                        <?php
+                        if ($hero_head = $hero_pic['crb_hero_heading']) {
+                        ?>
+                            <div class="hero-slider__content">
+                                <?php
+                                echo '<h2 class="hero-heading">' . $hero_head . '</h2>';
+                                ?>
 
                                 <?php
-                                if ($hero_head = $hero_pic['crb_hero_heading']) {
-                                    echo '<h2 class="hero-heading">' . $hero_head . '</h2>';
+                                if ($hero_desc = $hero_pic['crb_hero_desc']) {
+                                    echo '<div class="hero-decription">' . $hero_desc . '</div>';
                                 }
-
                                 ?>
+
+                                <?php
+                                if ($hero_link = $hero_pic['crb_hero_link']) {
+
+                                    echo '<a class="btn-link" href="' . $hero_link . '">' . $hero_pic['crb_hero_link_text'] . '</a>';
+                                }
+                                ?>
+                                
                             </div>
-                        </div>
-
-
-                    </div>
-
+                    
                 <?php
-                }
+                        }
                 ?>
+                    </div>
+            <?php
+                }
+            ?>
             </div>
             <!-- If we need pagination -->
             <div class="swiper-pagination"></div>
